@@ -55,7 +55,7 @@ Java 开发平台提供了以 Java 程序设计语言为核心的 __完整跨平
 Sun 定义的 Java 技术体系包含以下项目：
 
 <dl>
-  <dt>Java 程序设计语言
+  <dt>Java 程序设计语言</dt>
     <dd><div id="intro-lang">
       Java 程序设计语言是 Java 开发平台的 <b>灵魂</b>
       <br>Java 是一门 <b>强类型、静态检查、显式类型</b> 的低糖语言，它支持<a href="https://en.wikipedia.org/wiki/Programming_paradigm">面向对象编程、、面向对象多态、并发编程、事件驱动、反射元编程、泛型编程、Annotation 处理</a>，当然，也包含基本的<a href="https://en.wikipedia.org/wiki/Functional_programming">函数式编程</a>和<a href="https://en.wikipedia.org/wiki/Recursion_(computer_science)">递归</a>支持
@@ -69,19 +69,19 @@ Sun 定义的 Java 技术体系包含以下项目：
       <br><a href="https://github.com/antlr/grammars-v4/blob/master/java8/Java8.g4#L877">Java 8 ANTLR Grammar</a>
       <br><a href="https://docs.oracle.com/javase/specs/jls/se8/html/index.html">Java 8 Language Spefification</a>
       <br><a href="https://docs.oracle.com/javase/specs/jvms/se8/html/index.html">Java 8 JVM Spefification</a>
-    </div></div>
-  <dt>Class 文件格式<sub>（Java 字节码格式）</sub>
+    </div></div></dd>
+  <dt>Class 文件格式<sub>（Java 字节码格式）</sub></dt>
     <dd><div id="intro-classfile-links">
       <a href="https://duckduckgo.com/?q=Javaassist&t=ffab&atb=v163-1&ia=web">JavaAssist Java bytecode engineering toolkit</a>
       <br><a href="http://asm.ow2.org/">ObjectWeb ASM bytecode manipulation and analysis framework</a>
       <br><a href="https://github.com/apache/commons-bcel">Apache Commons Bytecode Engineering Library</a>
-    </div>
-  <dt>Java 虚拟机<sub>（在各种实际硬件和操作系统平台上的实现）</sub>
+    </div></dd>
+  <dt>Java 虚拟机<sub>（在各种实际硬件和操作系统平台上的实现）</sub></dt>
     <dd><div id="intro-jvm-links">
       <a href="https://github.com/imkiva/KiVM">KiVM Java VM (spec version 8 and only Java 8 is supported) implementation in C++</a>
-    </div>
-  <dt>Java 语言 API <sub>（<code>java.*</code> 标准库）</sub>
-  <dt>Java 外部 API <sub>（来自商业机构和开源社区的第三方 Java <abbr title="Class library">类库</abbr>）</sub>
+    </div></dd>
+  <dt>Java 语言 API <sub>（<code>java.*</code> 标准库）</sub></dt>
+  <dt>Java 外部 API <sub>（来自商业机构和开源社区的第三方 Java <abbr title="Class library">类库</abbr>）</sub></dt>
 </dl>
 
 <div id="jdk,jre">
