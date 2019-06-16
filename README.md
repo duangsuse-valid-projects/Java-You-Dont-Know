@@ -11,14 +11,14 @@
 
 Java 是什么？Java 是领先全球的[计算机程序设计]技术之一。
 
-Java 是一门[程序设计语言]，它更是一个[软件开发]平台，根据平台的组成部分、主要业务领域区分，Java 技术体系可以被分为 4 个子体系：
+Java 是一门[程序设计语言]，它更是一个[软件开发]平台，根据平台的组成部分、主要业务领域区分，Java 技术体系可以被分为 __4__ 个子体系：
 
 [计算机程序设计]: https://en.wikipedia.org/wiki/Computer_programming
 [程序设计语言]: https://en.wikipedia.org/wiki/Programming_language_theory
 [软件开发]: https://en.wikipedia.org/wiki/Software_engineering
 
 + Java Card：支持一些小程序（[Applets]）在诸如[智能卡]等 __小内存设备__ 上的平台
-+ Java ME（Micro Edition，J2ME）：支持 Java 运行在智能手机、<abbr title="Personal Digital Assistant">PDA</abbr> 等设备上的技术，对 JavaSE 的 API 有所精简，并且加入了针对嵌入式通讯设备的 API 支持
++ Java ME（Micro Edition，J2ME）：支持 Java 运行在智能手机、<abbr title="Personal Digital Assistant">PDA</abbr> 等设备上的技术，对 JavaSE 的 API __有所精简__，并且加入了针对嵌入式通讯设备的 API 支持
 + Java SE（Standard Edition，J2SE）：支持面向桌面工作站（和个人电脑、平板等）上如桌面窗口应用程序开发的 Java，提供了完整的 Java 核心 API（比如 [Collections 框架]）以及开发使用的辅助框架（比如 [javax.swing], [java.awt]）
 + Java EE（Enterprise Edition，J2EE）：支持使用了多层架构的企业级应用程序（比如 [ERP] 和 [CRM]<a href="#notes-intro[1]"><sup>[1]</sup></a>），以开发各类对应用程序健壮性、安全性、可测试性、可部署性、性能、并发支持性和软件工程理论有较强要求的应用程序（比如生产级别的 <abbr title="client/server">C/S</abbr> 架构服务器程序）
 <br>著名的 Java EE 技术例如 [Java Bean] (组合<ruby>可序列化<rt><code>@java.io.Serializable</code></rt><abbr title="java.lang.Object">对象</abbr></ruby>, <ruby>实例<rt>instance</rt></ruby>比如 EJB); [Web servlet] 架构; [JNDI] 服务访问接口架构
@@ -50,19 +50,19 @@ Java 是一门[程序设计语言]，它更是一个[软件开发]平台，根�
   </details>
 </div>
 
-Java 开发平台提供了以 Java 程序设计语言为核心的完整跨平台程序设计开发工具链，并且，它被广泛地应用于桌面程序、服务器程序、移动终端、大型计算机等场合。
+Java 开发平台提供了以 Java 程序设计语言为核心的 __完整跨平台程序设计开发工具链__，并且，它被广泛地应用于桌面程序、服务器程序、移动终端、大型计算机等场合。
 
 Sun 定义的 Java 技术体系包含以下项目：
 
 <dl>
   <dt>Java 程序设计语言
     <dd><div id="intro-lang">
-      Java 程序设计语言是 Java 开发平台的灵魂
-      <br>Java 是一门强类型、静态检查、显式类型的语言，它支持面向对象编程、反射元编程、泛型编程、Annotation 处理
+      Java 程序设计语言是 Java 开发平台的 <b>灵魂</b>
+      <br>Java 是一门 <b>强类型、静态检查、显式类型</b> 的低糖语言，它支持<a href="https://en.wikipedia.org/wiki/Programming_paradigm">面向对象编程、、面向对象多态、并发编程、事件驱动、反射元编程、泛型编程、Annotation 处理</a>，当然，也包含基本的<a href="https://en.wikipedia.org/wiki/Functional_programming">函数式编程</a>和<a href="https://en.wikipedia.org/wiki/Recursion_(computer_science)">递归</a>支持
       <br>Java 是使用<abbr title="garbage collection">自动内存管理</abbr>的程序设计语言，这意味着，你不需要考虑如何为这门语言的『值』分配空间。
       Java 的对象会在需要时被创建，不可能被访问时自动丢弃。
       <br>Java 很大程度上类似 C++，但没有采用 C++ 的『指针』模型，只支持引用和提供 <code>native</code> 方法来取代，并且移除了 C++ 里的<abbr title="operator overloading">操作符重载</abbr>和<a href="https://zh.wikipedia.org/wiki/%E7%BB%A7%E6%89%BF_(%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6)">多继承</a>，用 <code>interface</code> 接口规范定义取代。
-      <br>自 Java 1.5 以来，Java 引入了类型安全的 <code>enum</code>、值类型自动装箱拆箱、基于泛型擦除的泛型检查、不定长参数、foreach (<code>for (VarModifier TypedVarId: Expression)</code>) 等特性，Java 技术进入了新时代。
+      <br>自 <a href="https://www.oracle.com/technetwork/java/javase/archive-139210.html#top">Java 1.5</a> 以来，Java 引入了类型安全的 <code>enum</code>、值类型自动装箱拆箱、基于泛型擦除的泛型检查、不定长参数、foreach (<code>for (VarModifier TypedVarId: Expression)</code>) 等特性，Java 技术进入了新时代。
       <br><br>Sun Microsystems 这么描述 Java:
       <br><blockquote>Java 是个简单、面向对象、分布式、解释性、健壮、安全、与系统平台无关、可移植、高性能、多线程和动态灵活的编程语言</blockquote>
     <div id="intro-java-links">
@@ -81,9 +81,7 @@ Sun 定义的 Java 技术体系包含以下项目：
       <a href="https://github.com/imkiva/KiVM">KiVM Java VM (spec version 8 and only Java 8 is supported) implementation in C++</a>
     </div>
   <dt>Java 语言 API <sub>（<code>java.*</code> 标准库）</sub>
-    <dd>
   <dt>Java 外部 API <sub>（来自商业机构和开源社区的第三方 Java <abbr title="Class library">类库</abbr>）</sub>
-    <dd>
 </dl>
 
 <div id="jdk,jre">
@@ -190,9 +188,11 @@ Java 1.1 发布和 <a href="https://www.haskell.org/definition/">Haskell</a> <ab
 
 <abbr title="这句才是真话">写着玩玩呗</abbr>，而且有时候读书：每有会意便欣然忘食
 
-自己忘了吃饭，可是还埋怨书和代码使得自己会意了… __(￢_￢)__
+明明是自己忘了吃饭，可是还埋怨书和代码使得自己会意了… __(￢_￢)__
 
-于是带着报复社会的心态，决定给它写出来，而且简化一点尝试使他更容易读懂，既然一个人不吃饭… 那就大家都不吃！ __(￣‿￣)✧__
+于是带着报复社会的心态，决定给它写出来，而且简化一点尝试使他更容易读懂
+
+— 既然一个人不吃饭… 那就大家都不吃！ __(￣‿￣)✧__
 
 ## Licence 许可证
 
