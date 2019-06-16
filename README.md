@@ -125,9 +125,8 @@ JDK 1.0 时期的 Java 技术包括 JVM、Applet、AWT 等
 Java 1.1 发布和 <a href="https://www.haskell.org/definition/">Haskell</a> <abbr title="Haskell 1.4">97</abbr> 正好是同一年
 </div>
 
-<br><small>以上内容部分信息来自[《深入理解 Java 虚拟机》第二版]，可以在豆瓣试读</small>
-
-[RednaxelaFX对《深入理解Java虚拟机（第2版）》的笔记(6)](https://book.douban.com/people/RednaxelaFX/annotation/24722612/)
+<br><sub>以上内容部分信息来自[《深入理解 Java 虚拟机》第二版]，可以在豆瓣试读
+<br><a href="https://book.douban.com/people/RednaxelaFX/annotation/24722612/)">RednaxelaFX对《深入理解Java虚拟机（第2版）》的笔记(6)</a></sub>
 
 [《深入理解 Java 虚拟机》第二版]: https://book.douban.com/subject/24722612/
 
