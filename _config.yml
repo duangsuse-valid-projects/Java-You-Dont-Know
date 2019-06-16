@@ -13,3 +13,8 @@ jailed: false
 
 theme: jekyll-theme-primer
 gfm_quirks: paragraph_end
+
+lang: zh-CN
+
+title: You Dont Know Java
+description: 🐮☕️ 你没见过的 Java 语法（至 Java 8）
