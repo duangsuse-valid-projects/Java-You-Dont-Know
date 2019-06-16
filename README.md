@@ -110,7 +110,8 @@ Sun 定义的 Java 技术体系包含以下项目：
 Java 的领导者 [James Gosling 博士]从一开始就敏锐地注意到了其他开发平台不安全、时常出现严重的资源内存泄漏、缓冲区溢出、悬垂指针、并发数据竞争，处理复杂繁琐，开发效率低下、必须给不同硬件平台发布不同类型的软件包的问题<a href="#notes-intro[3]"><sup>[3]</sup></a>，Java <abbr title="Java 1.0 发布的时候在 SunWorld 大会上">及时地提出了</abbr> "Write Once, Run Anywhere" 这个口号。极高的开发效率和依此而生的极短开发时间，使 Java 成为网络时代的理想计算平台，从个人智能手机终端到网络服务器，Java 扮演着游戏主持者的角色，赋予了计算以新的复杂性可能。
 
 <div id="intro-java-96">
-96 年 1 月 23 日，JDK 1.0 发布，Java 终于有了第一个正式版本的运行环境
+<b>1996</b> 年 1 月 23 日，JDK 1.0 发布，Java 终于有了第一个正式版本的运行环境
+
 JDK 1.0 提供了一个纯字节码解释器版本的实现 — Sun Classic VM
 
 JDK 1.0 时期的 Java 技术包括 JVM、Applet、AWT 等
@@ -119,12 +120,12 @@ JDK 1.0 时期的 Java 技术包括 JVM、Applet、AWT 等
 
 同年 9 月，已经有 8.3 万网页使用了 Java 技术制作。
 
-同底 5 月底，Sun 公司于美国<abbr title="San Francisco">旧金山</abbr>举行了首届 JavaOne 大会，从此 JavaOne 大会成为世界 Java 开发者一年一度的技术盛会
+同年 5 月底，Sun 公司于美国<abbr title="San Francisco">旧金山</abbr>举行了首届 JavaOne 大会，从此 JavaOne 大会成为世界 Java 开发者一年一度的技术盛会
 
 Java 1.1 发布和 <a href="https://www.haskell.org/definition/">Haskell</a> <abbr title="Haskell 1.4">97</abbr> 正好是同一年
 </div>
 
-以上内容部分信息来自[《深入理解 Java 虚拟机》第二版]，可以在豆瓣试读
+<small>以上内容部分信息来自[《深入理解 Java 虚拟机》第二版]，可以在豆瓣试读</small>
 
 [RednaxelaFX对《深入理解Java虚拟机（第2版）》的笔记(6)](https://book.douban.com/people/RednaxelaFX/annotation/24722612/)
 
