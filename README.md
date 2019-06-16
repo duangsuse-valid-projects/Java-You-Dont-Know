@@ -7,7 +7,7 @@
 你不知道的 Java：那些原理不为人知却总是被使用的“黑科技” — 截至 [Java] 语言版本 [1.8]
 
 > 我的语言 Java 今年 23 岁，完美的程序设计材料，完美的 <ruby>OOP<rt>面向对象编程</rt></ruby>语言，但在我手里却是个超辣鸡的[干物] lang。经常看到看不懂的语法、重复的代码、假装会用的泛型，不断 <kbd>Ctrl</kbd> - <kbd>C</kbd>; <kbd>Ctrl</kbd> - <kbd>V</kbd> 抄改别人的代码，可是莫名其妙地无法停下来啊！！！<br>
-然而 Java 在这里的一切她生活中的秘密，作为主人的我并不知道，<ruby>推<rt><del>zhōng</del></rt>倒<rt><del>chū</del></rt></ruby>了居住在同一栋楼的天然少女 [C++]，以及无意间来到我家的冷酷少女 [Haskell] 后，我会发现 Java 的真实面目吗？
+然而 Java 在这里的一切她生活中的秘密，作为主人的我并不知道，<ruby>推<rt><del>zhōng</del></rt>倒<rt><del>chū</del></rt></ruby>了居住在同一栋楼的天然少女 [C++]，以及无意间来到我家的冷酷少女 [Haskell] 后，我会发现 Java 的真实面目吗？<a href="#notes-intro[0]"><sup>[0]</sup></a>
 
 Java 是什么？Java 是领先全球的[计算机程序设计]技术之一。
 
@@ -20,8 +20,21 @@ Java 是一门[程序设计语言]，它更是一个[软件开发]平台，根�
 + Java Card：支持一些小程序（[Applets]）在诸如[智能卡]等 __小内存设备__ 上的平台
 + Java ME（Micro Edition，J2ME）：支持 Java 运行在智能手机、<abbr title="Personal Digital Assistant">PDA</abbr> 等设备上的技术，对 JavaSE 的 API 有所精简，并且加入了针对嵌入式通讯设备的 API 支持
 + Java SE（Standard Edition，J2SE）：支持面向桌面工作站（和个人电脑、平板等）上如桌面窗口应用程序开发的 Java，提供了完整的 Java 核心 API（比如 [Collections 框架]）以及开发使用的辅助框架（比如 [javax.swing], [java.awt]）
-+ Java EE（Enterprise Edition，J2EE）：支持使用了多层架构的企业级应用程序（比如 [ERP] 和 [CRM]<a href="#notes-intro[1]"><sup>[1]</sup></a>），以开发各类对应用程序健壮性、安全性、性能、并发支持性、可测试性、可部署性和软件工程理论有较强要求的应用程序（比如生产级别的 C/S 架构服务器程序）
-<br>著名的 Java EE 技术例如 [Java Bean] (组合可序列化对象, 实例比如 EJB); [Web servlet] 架构; [JNDI] 服务访问接口架构
++ Java EE（Enterprise Edition，J2EE）：支持使用了多层架构的企业级应用程序（比如 [ERP] 和 [CRM]<a href="#notes-intro[1]"><sup>[1]</sup></a>），以开发各类对应用程序健壮性、安全性、可测试性、可部署性、性能、并发支持性和软件工程理论有较强要求的应用程序（比如生产级别的 <abbr title="client/server">C/S</abbr> 架构服务器程序）
+<br>著名的 Java EE 技术例如 [Java Bean] (组合<ruby>可序列化<rt><code>@java.io.Serializable</code></rt><abbr title="java.lang.Object">对象</abbr></ruby>, <ruby>实例<rt>instance</rt></ruby>比如 EJB); [Web servlet] 架构; [JNDI] 服务访问接口架构
+
+[ERP]: https://en.wikipedia.org/wiki/Enterprise_resource_planning
+[CRM]: https://en.wikipedia.org/wiki/Customer_relationship_management
+
+[Java]: https://www.oracle.com/java/
+[1.8]: https://docs.oracle.com/javase/specs/jls/se8/html/index.html
+[干物]: https://zh.moegirl.org/%E5%B9%B2%E7%89%A9%E5%A5%B3#
+
+[C++]: https://en.wikipedia.org/wiki/C%2B%2B
+[Haskell]: https://www.haskell.org/
+
+[智能卡]: https://en.wikipedia.org/wiki/Smart_card
+[Applets]: https://en.wikipedia.org/wiki/Java_applet
 
 [Collections 框架]: https://docs.oracle.com/javase/8/docs/technotes/guides/collections/reference.html
 [java.awt]: https://docs.oracle.com/javase/8/docs/api/java/awt/package-summary.html
@@ -30,41 +43,47 @@ Java 是一门[程序设计语言]，它更是一个[软件开发]平台，根�
 [Web servlet]: https://en.wikipedia.org/wiki/Java_servlet
 [JNDI]: https://en.wikipedia.org/wiki/Java_Naming_and_Directory_Interface
 
-<div align="center">
+<div id="intro-javase8-stack" align="center">
   <details open>
   <summary><var>JavaSE 8 <a href="https://docs.oracle.com/javase/8/docs/#content">技术栈</a></var></summary>
   <img alt="JavaSE Tech Stack" src="resources/images/docs.oracle.com.javase.8.docs.table.png">
   </details>
 </div>
 
-Java 开发平台提供了以 Java 程序设计语言为核心的完整跨平台程序设计开发工具链，并且，它被广泛地应用于桌面程序、大型计算机、服务器程序、移动终端等场合。
+Java 开发平台提供了以 Java 程序设计语言为核心的完整跨平台程序设计开发工具链，并且，它被广泛地应用于桌面程序、服务器程序、移动终端、大型计算机等场合。
 
 Sun 定义的 Java 技术体系包含以下项目：
 
 <dl>
   <dt>Java 程序设计语言
-  <dd>Java 程序设计语言是 Java 开发平台的灵魂
-    Java 是一门强类型、静态检查、显式类型的语言，它支持面向对象编程、反射元编程、泛型编程、Annotation 处理<br>
-    Java 是使用<abbr title="garbage collection">自动内存管理</abbr>的程序设计语言，这意味着，你不需要考虑如何为这门语言的『值』分配空间，Java 的对象会在需要时被创建，不可能被访问时自动丢弃。<br>Java 很大程度上类似 C++，但没有采用 C++ 的『指针』模型，只支持引用和提供 <code>native</code> 方法来取代，并且移除了 C++ 里的<abbr title="operator overloading">操作符重载</abbr>和<a href="https://zh.wikipedia.org/wiki/%E7%BB%A7%E6%89%BF_(%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6)">多继承</a>，用 <code>interface</code> 接口规范定义取代。
-    <br>自 Java 1.5 以来，Java 引入了类型安全的 <code>enum</code>、值类型自动装箱拆箱、基于泛型擦除的泛型检查、不定长参数、foreach (<code>for (VarModifier TypedVarId: Expression)</code>) 等特性，Java 技术进入了新时代。
-    <br><br>Sun Microsystems 这么描述 Java:<br><blockquote>Java 是个简单、面向对象、分布式、解释性、健壮、安全、与系统平台无关、可移植、高性能、多线程和动态灵活的编程语言</blockquote>
+    <dd><div id="intro-lang">
+      Java 程序设计语言是 Java 开发平台的灵魂
+      <br>Java 是一门强类型、静态检查、显式类型的语言，它支持面向对象编程、反射元编程、泛型编程、Annotation 处理
+      <br>Java 是使用<abbr title="garbage collection">自动内存管理</abbr>的程序设计语言，这意味着，你不需要考虑如何为这门语言的『值』分配空间。
+      Java 的对象会在需要时被创建，不可能被访问时自动丢弃。
+      <br>Java 很大程度上类似 C++，但没有采用 C++ 的『指针』模型，只支持引用和提供 <code>native</code> 方法来取代，并且移除了 C++ 里的<abbr title="operator overloading">操作符重载</abbr>和<a href="https://zh.wikipedia.org/wiki/%E7%BB%A7%E6%89%BF_(%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6)">多继承</a>，用 <code>interface</code> 接口规范定义取代。
+      <br>自 Java 1.5 以来，Java 引入了类型安全的 <code>enum</code>、值类型自动装箱拆箱、基于泛型擦除的泛型检查、不定长参数、foreach (<code>for (VarModifier TypedVarId: Expression)</code>) 等特性，Java 技术进入了新时代。
+      <br><br>Sun Microsystems 这么描述 Java:
+      <br><blockquote>Java 是个简单、面向对象、分布式、解释性、健壮、安全、与系统平台无关、可移植、高性能、多线程和动态灵活的编程语言</blockquote>
     <div id="intro-java-links">
-    <br><a href="https://github.com/antlr/grammars-v4/blob/master/java8/Java8.g4#L877">Java 8 ANTLR Grammar</a><br>
-    <a href="https://docs.oracle.com/javase/specs/jls/se8/html/index.html">Java 8 Language Spefification</a><br>
-    <a href="https://docs.oracle.com/javase/specs/jvms/se8/html/index.html">Java 8 JVM Spefification</a>
-    </div>
+      <br><a href="https://github.com/antlr/grammars-v4/blob/master/java8/Java8.g4#L877">Java 8 ANTLR Grammar</a>
+      <br><a href="https://docs.oracle.com/javase/specs/jls/se8/html/index.html">Java 8 Language Spefification</a>
+      <br><a href="https://docs.oracle.com/javase/specs/jvms/se8/html/index.html">Java 8 JVM Spefification</a>
+    </div></div>
   <dt>Class 文件格式<sub>（Java 字节码格式）</sub>
-    <div id="intro-classfile-links">
-    <a href="https://duckduckgo.com/?q=Javaassist&t=ffab&atb=v163-1&ia=web">JavaAssist Java bytecode engineering toolkit</a>
-    <br><a href="http://asm.ow2.org/">ObjectWeb ASM bytecode manipulation and analysis framework</a>
-    <br><a href="https://github.com/apache/commons-bcel">Apache Commons Bytecode Engineering Library</a>
+    <dd><div id="intro-classfile-links">
+      <a href="https://duckduckgo.com/?q=Javaassist&t=ffab&atb=v163-1&ia=web">JavaAssist Java bytecode engineering toolkit</a>
+      <br><a href="http://asm.ow2.org/">ObjectWeb ASM bytecode manipulation and analysis framework</a>
+      <br><a href="https://github.com/apache/commons-bcel">Apache Commons Bytecode Engineering Library</a>
     </div>
   <dt>Java 虚拟机<sub>（在各种实际硬件和操作系统平台上的实现）</sub>
-  <div id="intro-jvm-links">
-  <a href="https://github.com/imkiva/KiVM">KiVM Java VM (spec version 8 and only Java 8 is supported) implementation in C++</a>
-  </div>
+    <dd><div id="intro-jvm-links">
+      <a href="https://github.com/imkiva/KiVM">KiVM Java VM (spec version 8 and only Java 8 is supported) implementation in C++</a>
+    </div>
   <dt>Java 语言 API <sub>（<code>java.*</code> 标准库）</sub>
+    <dd>
   <dt>Java 外部 API <sub>（来自商业机构和开源社区的第三方 Java <abbr title="Class library">类库</abbr>）</sub>
+    <dd>
 </dl>
 
 <div id="jdk,jre">
@@ -73,7 +92,7 @@ Sun 定义的 Java 技术体系包含以下项目：
 我们也把 Java 虚拟机、JavaSE API <sub>(所有 Java API 的子集)</sub> 这两部分统称为 <abbr title="Java Runtime Environment">JRE</abbr>，它是支持 Java 程序运行的基础环境
 </div>
 
-<div align="center">
+<div id="intro-java-version-history" align="center">
   <details open>
   <summary><var>Java 版本历史</var></summary>
   <img alt="Java Version History" src="resources/images/javaversions.png" />
@@ -84,11 +103,11 @@ Sun 定义的 Java 技术体系包含以下项目：
 
 由 Google 主导开发而领先世界且与 Apple 的 iOS 二分天下的移动操作系统平台，Android，[Android 使用的软件开发技术](https://en.wikipedia.org/wiki/Android_(operating_system)#Software_stack)，就是 Java 技术的一个衍生品。
 
-1991 年，由 James Gosling 领导的 "Green Project" 项目启动，此计划的目的是开发一种能够在多种消费电子产品（比如机顶盒、游戏机、个人电脑等）上面运行的程序运行时架构。这个架构就是 Java 的前身：Oak（橡树）
+1991 年，由 James Gosling 领导的 "Green Project" 项目启动，此计划的目的是开发一种能够在多种消费电子产品（比如游戏机、机顶盒、个人电脑等）上面运行的程序运行时架构。这个架构就是 Java 的前身：Oak（橡树）
 
-即便其前身 Oak 在市场上并不算成功，Java 的诞生正好赶上了那个无论软件需求量还是工程量都暴涨的网络时代 — 这个时代只接受同类软件中第一个弄出来的！
+即便其前身 Oak 在市场上并不算成功，Java 的诞生正好赶上了那个无论软件需求量还是工程量都暴涨的网络时代 — 这个时代只接受同类软件中 __第一个__ 弄出来的！
 
-自从 1995 年的 Oak to Java，Java 在 SunWorld 大会上发布第一个版本 1.0 以来，Java 因为其强大的通用性、安全性、稳定性、可移植性、开发效率闻名于世。
+自从 1995 年的 Oak to Java，Java 在 _SunWorld_ 大会上发布第一个版本 1.0 以来，Java 因为其强大的通用性、安全性、稳定性、可移植性、开发效率闻名于世。
 
 Java 的领导者 [James Gosling 博士]从一开始就敏锐地注意到了其他开发平台不安全、时常出现严重的资源内存泄漏、缓冲区溢出、悬垂指针、并发数据竞争，处理复杂繁琐，开发效率低下、必须给不同硬件平台发布不同类型的软件包的问题<a href="#notes-intro[3]"><sup>[3]</sup></a>，Java <abbr title="Java 1.0 发布的时候在 SunWorld 大会上">及时地提出了</abbr> "Write Once, Run Anywhere" 这个口号。极高的开发效率和依此而生的极短开发时间，使 Java 成为网络时代的理想计算平台，从个人智能手机终端到网络服务器，Java 扮演着游戏主持者的角色，赋予了计算以新的复杂性可能。
 
@@ -113,26 +132,14 @@ Java 1.1 发布和 <a href="https://www.haskell.org/definition/">Haskell</a> <ab
 
 [《深入理解 Java 虚拟机》第二版]: https://book.douban.com/subject/24722612/
 
-[Java]: https://www.oracle.com/java/
-[1.8]: https://docs.oracle.com/javase/specs/jls/se8/html/index.html
-[干物]: https://zh.moegirl.org/%E5%B9%B2%E7%89%A9%E5%A5%B3#
-
-[C++]: https://en.wikipedia.org/wiki/C%2B%2B
-[Haskell]: https://www.haskell.org/
-
-[ERP]: https://en.wikipedia.org/wiki/Enterprise_resource_planning
-[CRM]: https://en.wikipedia.org/wiki/Customer_relationship_management
-
-[智能卡]: https://en.wikipedia.org/wiki/Smart_card
-[Applets]: https://en.wikipedia.org/wiki/Java_applet
-
 [James Gosling 博士]: https://en.wikipedia.org/wiki/James_Gosling
 
 <small>
 <div id="notes-intro">
+  <p id="notes-intro[0]"><sup>[0]</sup>详见 B 站<a href="https://www.bilibili.com/bangumi/media/md2580">《干物妹！小埋》</a></p>
   <p id="notes-intro[1]"><sup>[1]</sup><abbr title="Enterprise resource planning">ERP</abbr>, 企业资源管理<br><abbr title="Customer relationship management">CRM</abbr>, 客户资源管理</p>
   <p id="notes-intro[2]"><sup>[2]</sup>信息来自 <a href="https://www.java.com/zh_CN/about/">java.com/zh_CN/about</a></p>
-  <p id="notes-intro[3]"><sup>[3]</sup>这也是属于见仁见智的问题，实际上，使用平台无关（全平台兼容）的中间代码作为最终的『二进制』形式而不是直接翻译到机器代码，最开始也给 Java 程序的执行带来了一些问题（虽然现在 Java 的选择也显得越来越符合“时代潮流”了），但是，软件最终的代码形式只是一个选择是否合适、是否符合定位的问题，不存在优劣之分。</p>
+  <p id="notes-intro[3]"><sup>[3]</sup>排除增强类型系统安全检查强度和动态检查、运行时异常外；使用<ruby>中间码<rt><a href="https://en.wikipedia.org/wiki/Intermediate_representation">intermediate language</a></rt></ruby>，这也是属于见仁见智的问题，实际上，使用平台无关（全平台兼容）的中间代码作为最终的『二进制』形式而不是直接翻译到机器代码，最开始也给 Java 程序的执行带来了一些问题（虽然现在 Java 的选择也显得越来越符合“时代潮流”了），但是，语言<abbr title="『发布』代码的形式，有时被称为『二进制文件』，一般认为是会被持久化在非易失性 (non-volatile) 存储器 (memory) 上的代码形式">“最终”</abbr>的代码形式只是一个选择是否合适、是否符合定位的问题，不存在优劣之分。</p>
 </div>
 </small>
 
@@ -168,7 +175,6 @@ Java 1.1 发布和 <a href="https://www.haskell.org/definition/">Haskell</a> <ab
   + `package-info.java`
   + <ruby>非<rt>non</rt></ruby> ASCII <ruby>标识符<rt>identifer</rt></ruby>
 + 和语言本身 / 工具集成的类
-+
 
 ## Thanks 特别感谢
 
@@ -177,7 +183,8 @@ Java 1.1 发布和 <a href="https://www.haskell.org/definition/">Haskell</a> <ab
 
 ## Recommended Links 推荐链接
 
-+ [duangsuse::Echo](https://t.me/s/dsuse)
++ [duangsuse::Echo](https://t.me/s/dsuse) duangsuse 的 Telegram 频道~
++ RednaxelaFX：[虚拟机随谈（一）：解释器，树遍历解释器，基于栈与基于寄存器，大杂烩](http://rednaxelafx.iteye.com/blog/492667)
 
 ## Motivation 写作动机
 
