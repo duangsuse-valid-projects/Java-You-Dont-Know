@@ -222,3 +222,21 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
+
+## Development: Setup Jekyll
+
+```bash
+pushd Java-You-Dont-Know
+
+git checkout -b gh-pages
+
+print>Gemfile \
+  "source \'https://rubygems.org\'" \
+  "\ngem \'github-pages\', group: :jekyll_plugins"
+
+bundle install
+bundle exec jekyll serve
+
+git checkout master
+popd
+```
