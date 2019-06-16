@@ -196,7 +196,7 @@ Java 1.1 发布和 <a href="https://www.haskell.org/definition/">Haskell</a> <ab
 
 ## Licence 许可证
 
-> 此许可证应用到文中所有 _duangsuse_ 编写的 __示例代码__
+> 此许可证应用到文中所有由 _duangsuse_ 编写的 __示例代码__
 
 ```plain
 MIT License
