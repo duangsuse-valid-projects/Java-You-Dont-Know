@@ -125,7 +125,7 @@ JDK 1.0 时期的 Java 技术包括 JVM、Applet、AWT 等
 Java 1.1 发布和 <a href="https://www.haskell.org/definition/">Haskell</a> <abbr title="Haskell 1.4">97</abbr> 正好是同一年
 </div>
 
-<small>以上内容部分信息来自[《深入理解 Java 虚拟机》第二版]，可以在豆瓣试读</small>
+<br><small>以上内容部分信息来自[《深入理解 Java 虚拟机》第二版]，可以在豆瓣试读</small>
 
 [RednaxelaFX对《深入理解Java虚拟机（第2版）》的笔记(6)](https://book.douban.com/people/RednaxelaFX/annotation/24722612/)
 
@@ -133,14 +133,12 @@ Java 1.1 发布和 <a href="https://www.haskell.org/definition/">Haskell</a> <ab
 
 [James Gosling 博士]: https://en.wikipedia.org/wiki/James_Gosling
 
-<small>
-<div id="notes-intro">
+<div id="notes-intro"><small>
   <p id="notes-intro[0]"><sup>[0]</sup>详见 B 站<a href="https://www.bilibili.com/bangumi/media/md2580">《干物妹！小埋》</a></p>
   <p id="notes-intro[1]"><sup>[1]</sup><abbr title="Enterprise resource planning">ERP</abbr>, 企业资源管理<br><abbr title="Customer relationship management">CRM</abbr>, 客户资源管理</p>
   <p id="notes-intro[2]"><sup>[2]</sup>信息来自 <a href="https://www.java.com/zh_CN/about/">java.com/zh_CN/about</a></p>
   <p id="notes-intro[3]"><sup>[3]</sup>排除增强类型系统安全检查强度和动态检查、运行时异常外；使用<ruby>中间码<rt><a href="https://en.wikipedia.org/wiki/Intermediate_representation">intermediate language</a></rt></ruby>，这也是属于见仁见智的问题，实际上，使用平台无关（全平台兼容）的中间代码作为最终的『二进制』形式而不是直接翻译到机器代码，最开始也给 Java 程序的执行带来了一些问题（虽然现在 Java 的选择也显得越来越符合“时代潮流”了），但是，语言<abbr title="『发布』代码的形式，有时被称为『二进制文件』，一般认为是会被持久化在非易失性 (non-volatile) 存储器 (memory) 上的代码形式">“最终”</abbr>的代码形式只是一个选择是否合适、是否符合定位的问题，不存在优劣之分。</p>
-</div>
-</small>
+</small></div>
 
 ## Contents 内容
 
