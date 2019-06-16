@@ -1,0 +1,15 @@
+encoding: UTF-8
+
+highlighter: rouge
+
+kramdown:
+  input: GFM
+  hard_wrap: false
+  math_engine: mathjax
+  syntax_highlighter: rouge
+
+future: true
+jailed: false
+
+theme: jekyll-theme-primer
+gfm_quirks: paragraph_end
