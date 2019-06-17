@@ -17,10 +17,10 @@ Java 是一门[程序设计语言]，它更是一个[软件开发]平台，根�
 [程序设计语言]: https://en.wikipedia.org/wiki/Programming_language_theory
 [软件开发]: https://en.wikipedia.org/wiki/Software_engineering
 
-+ Java Card：支持一些小程序（[Applets]）在诸如[智能卡]等 __小内存设备__ 上的平台
-+ Java ME（Micro Edition，J2ME）：支持 Java 运行在智能手机、<abbr title="Personal Digital Assistant">PDA</abbr> 等设备上的技术，对 JavaSE 的 API __有所精简__，并且加入了针对嵌入式通讯设备的 API 支持
-+ Java SE（Standard Edition，J2SE）：支持面向桌面工作站（和个人电脑、平板等）上如桌面窗口应用程序开发的 Java，提供了完整的 Java 核心 API（比如 [Collections 框架]）以及开发使用的辅助框架（比如 [javax.swing], [java.awt]）
-+ Java EE（Enterprise Edition，J2EE）：支持使用了多层架构的企业级应用程序（比如 [ERP] 和 [CRM]<a href="#notes-intro[1]"><sup>[1]</sup></a>），以开发各类对应用程序健壮性、安全性、可测试性、可部署性、性能、并发支持性和软件工程理论有较强要求的应用程序（比如生产级别的 <abbr title="client/server">C/S</abbr> 架构服务器程序）
++ __Java Card__：支持一些小程序（[Applets]）在诸如[智能卡]等 __小内存设备__ 上的平台
++ __Java ME__（Micro Edition，J2ME）：支持 Java 运行在智能手机、<abbr title="Personal Digital Assistant">PDA</abbr> 等设备上的技术，对 JavaSE 的 API __有所精简__，并且加入了针对嵌入式通讯设备的 API 支持
++ __Java SE__（Standard Edition，J2SE）：支持面向桌面工作站（和个人电脑、平板等）上如桌面窗口应用程序开发的 Java，提供了完整的 Java 核心 API（比如 [Collections 框架]）以及开发使用的辅助框架（比如 [javax.swing], [java.awt]）
++ __Java EE__（Enterprise Edition，J2EE）：支持使用了多层架构的企业级应用程序（比如 [ERP] 和 [CRM]<a href="#notes-intro[1]"><sup>[1]</sup></a>），以开发各类对应用程序健壮性、安全性、可测试性、可部署性、性能、并发支持性和软件工程理论有较强要求的应用程序（比如生产级别的 <abbr title="client/server">C/S</abbr> 架构服务器程序）
 <br>著名的 Java EE 技术例如 [Java Bean] (组合<ruby>可序列化<rt><code>@java.io.Serializable</code></rt><abbr title="java.lang.Object">对象</abbr></ruby>, <ruby>实例<rt>instance</rt></ruby>比如 EJB); [Web servlet] 架构; [JNDI] 服务访问接口架构
 
 [ERP]: https://en.wikipedia.org/wiki/Enterprise_resource_planning
@@ -58,10 +58,10 @@ Sun 定义的 Java 技术体系包含以下项目：
   <dt>Java 程序设计语言</dt>
     <dd><div id="intro-lang">
       Java 程序设计语言是 Java 开发平台的 <b>灵魂</b>
-      <br>Java 是一门 <b>强类型、静态检查、显式类型</b> 的低糖语言，它支持<a href="https://en.wikipedia.org/wiki/Programming_paradigm">面向对象编程、、面向对象多态、并发编程、事件驱动、反射元编程、泛型编程、Annotation 处理</a>，当然，也包含基本的<a href="https://en.wikipedia.org/wiki/Functional_programming">函数式编程</a>和<a href="https://en.wikipedia.org/wiki/Recursion_(computer_science)">递归</a>支持
-      <br>Java 是使用<abbr title="garbage collection">自动内存管理</abbr>的程序设计语言，这意味着，你不需要考虑如何为这门语言的『值』分配空间。
-      Java 的对象会在需要时被创建，不可能被访问时自动丢弃。
-      <br>Java 很大程度上类似 C++，但没有采用 C++ 的『指针』模型，只支持引用和提供 <code>native</code> 方法来取代，并且移除了 C++ 里的<abbr title="operator overloading">操作符重载</abbr>和<a href="https://zh.wikipedia.org/wiki/%E7%BB%A7%E6%89%BF_(%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6)">多继承</a>，用 <code>interface</code> 接口规范定义取代。
+      <br>Java 是一门 <b>强类型、静态检查、显式类型</b> 的“低糖”语言，它支持<a href="https://en.wikipedia.org/wiki/Programming_paradigm">面向对象编程、面向对象多态、并发编程、事件驱动、反射元编程、泛型编程、Annotation 处理</a>，当然，也包含基本的<a href="https://en.wikipedia.org/wiki/Functional_programming">函数式编程</a>和<a href="https://en.wikipedia.org/wiki/Recursion_(computer_science)">递归</a>支持
+      <br>Java 是使用<abbr title="garbage collection">自动内存管理</abbr>的程序设计语言，这意味着，你不需要考虑如何为这门语言的『值』分配内存空间。
+      Java 的对象会在需要时被 <code>new</code> 创建，不可能被访问时自动丢弃。
+      <br>Java 很大程度上类似 C++，但没有采用 C++ 的<abbr title="指针是计算机科学 PLT 里的一种数据类型概念。1964 年它被计算机科学家 Harold Lawson 首创；C99、Ada95、FreeBasic、C# 等语言都对指针概念的良好支持，用于进行内存单元对象的偏移取值等运算">『指针』</abbr>模型，只支持『<ruby>可空<rt>nullable</rt>』</ruby>引用和提供 <code>native</code> 方法来取代，并且移除了 C++ 里的<abbr title="operator overloading">操作符重载</abbr>和<a href="https://zh.wikipedia.org/wiki/%E7%BB%A7%E6%89%BF_(%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6)">多继承</a>，用 <code>interface</code> 接口规范定义取代。
       <br>自 <a href="https://www.oracle.com/technetwork/java/javase/archive-139210.html#top">Java 1.5</a> 以来，Java 引入了类型安全的 <code>enum</code>、值类型自动装箱拆箱、基于泛型擦除的泛型检查、不定长参数、foreach (<code>for (VarModifier TypedVarId: Expression)</code>) 等特性，Java 技术进入了新时代。
       <br><br>Sun Microsystems 这么描述 Java:
       <br><blockquote>Java 是个简单、面向对象、分布式、解释性、健壮、安全、与系统平台无关、可移植、高性能、多线程和动态灵活的编程语言</blockquote>
@@ -85,42 +85,44 @@ Sun 定义的 Java 技术体系包含以下项目：
 </dl>
 
 <div id="jdk,jre">
-我们把 Java 程序设计语言的基础工具、Java 虚拟机、Java API 这三部分统称为 <abbr title="Java Development Kit">JDK</abbr>，它是进行 Java 软件开发的最小支持环境
+<b>我们把 Java 程序设计语言的基础工具、Java 虚拟机、Java API 这三部分统称为 <abbr title="Java Development Kit">JDK</abbr>，它是进行 Java 软件开发的最小支持环境
 
-我们也把 Java 虚拟机、JavaSE API <sub>(所有 Java API 的子集)</sub> 这两部分统称为 <abbr title="Java Runtime Environment">JRE</abbr>，它是支持 Java 程序运行的基础环境
+我们也把 Java 虚拟机、JavaSE API <sub>(所有 Java API 的子集)</sub> 这两部分统称为 <abbr title="Java Runtime Environment">JRE</abbr>，它是支持 Java 程序运行的基础环境</b>
 </div>
 
 <div id="intro-java-version-history" align="center">
   <details open>
-  <summary><var>Java 版本历史</var></summary>
+  <summary><var>Java 版本历史</var> <a href="https://en.wikipedia.org/wiki/Java_version_history">详情</a></summary>
   <img alt="Java Version History" src="resources/images/javaversions.png" />
   </details>
 </div>
 
-时至今日，Java 技术已经吸引了 900 多万名软件开发者，使用 Java 技术的设备多达几十亿台，包含众多智能卡、机顶盒、导航系统、游戏机和其他设备。<a href="#notes-intro[2]"><sup>[2]</sup></a>
+时至今日，Java 技术已经吸引了 __900 多万__ 名软件开发者，使用 Java 技术的设备多达 __几十亿__ 台，包含众多智能卡、机顶盒、导航系统、游戏机和其他设备。<a href="#notes-intro[2]"><sup>[2]</sup></a>
 
 由 Google 主导开发而领先世界且与 Apple 的 iOS 二分天下的移动操作系统平台，Android，[Android 使用的软件开发技术](https://en.wikipedia.org/wiki/Android_(operating_system)#Software_stack)，就是 Java 技术的一个衍生品。
 
-1991 年，由 James Gosling 领导的 "Green Project" 项目启动，此计划的目的是开发一种能够在多种消费电子产品（比如游戏机、机顶盒、个人电脑等）上面运行的程序运行时架构。这个架构就是 Java 的前身：Oak（橡树）
+__1991 年__，由 James Gosling 领导的 "_Green_ Project" 项目启动，此计划的目的是开发一种能够在多种消费电子产品（比如游戏机、机顶盒、个人电脑等）上面运行的程序运行时和软件平台架构。这个架构就是 Java 的前身：Oak（橡树），它尝试扩展 C++，和早期的 Java 大同小异<a href="#notes-intro[3]"><sup>[3]</sup></a>
 
-即便其前身 Oak 在市场上并不算成功，Java 的诞生正好赶上了那个无论软件需求量还是工程量都暴涨的网络时代 — 这个时代只接受同类软件中 __第一个__ 弄出来的！
+即便其前身 [Oak] 在市场上并不算成功，Java 的诞生正好赶上了那个无论软件需求量还是工程量都暴涨的网络时代 — 这个时代只接受同类软件中 __第一个__ 弄出来的！
+
+[Oak]: https://en.wikipedia.org/wiki/Oak_(programming_language)
 
 自从 1995 年的 Oak to Java，Java 在 _SunWorld_ 大会上发布第一个版本 1.0 以来，Java 因为其强大的通用性、安全性、稳定性、可移植性、开发效率闻名于世。
 
-Java 的领导者 [James Gosling 博士]从一开始就敏锐地注意到了其他开发平台不安全、时常出现严重的资源内存泄漏、缓冲区溢出、悬垂指针、并发数据竞争，处理复杂繁琐，开发效率低下、必须给不同硬件平台发布不同类型的软件包的问题<a href="#notes-intro[3]"><sup>[3]</sup></a>，Java <abbr title="Java 1.0 发布的时候在 SunWorld 大会上">及时地提出了</abbr> "Write Once, Run Anywhere" 这个口号。极高的开发效率和依此而生的极短开发时间，使 Java 成为网络时代的理想计算平台，从个人智能手机终端到网络服务器，Java 扮演着游戏主持者的角色，赋予了计算以新的复杂性可能。
+Java 的领导者 [James Gosling 博士]从一开始就敏锐地注意到了其他开发平台不安全、时常出现严重的资源内存泄漏、缓冲区溢出、悬垂指针、并发数据竞争，处理复杂繁琐，开发效率低下、必须给不同硬件平台发布不同类型的软件包的问题<a href="#notes-intro[4]"><sup>[4]</sup></a>，Java <abbr title="Java 1.0 发布的时候在 SunWorld 大会上">及时地提出了</abbr> __"Write Once, Run Anywhere"__ 这个口号。极高的开发效率和依此而生的极短开发时间，使 Java 成为网络时代的理想计算平台，从个人智能手机终端到网络服务器，Java 扮演着游戏主持者的角色，赋予了计算以新的复杂性可能。
 
 <div id="intro-java-96">
-<b>1996</b> 年 1 月 23 日，JDK 1.0 发布，Java 终于有了第一个正式版本的运行环境
+<b>1996 年 1 月 23 日</b>，JDK 1.0 发布，Java 终于有了第一个正式版本的运行环境
 
-JDK 1.0 提供了一个纯字节码解释器版本的实现 — Sun Classic VM
+JDK 1.0 提供了一个纯字节码解释器版本的实现 — _Sun Classic VM_
 
 JDK 1.0 时期的 Java 技术包括 JVM、Applet、AWT 等
 
-同年 4 月，10 个操作系统供应商声明将在其产品中嵌入 Java 技术
+<b>同年 4 月</b>，10 个操作系统供应商声明将在其产品中嵌入 Java 技术
 
-同年 9 月，已经有 8.3 万网页使用了 Java 技术制作。
+<b>同年 9 月</b>，已经有 8.3 万网页使用了 Java 技术制作。
 
-同年 5 月底，Sun 公司于美国<abbr title="San Francisco">旧金山</abbr>举行了首届 JavaOne 大会，从此 JavaOne 大会成为世界 Java 开发者一年一度的技术盛会
+<b>同年 5 月底</b>，Sun 公司于美国<abbr title="San Francisco">旧金山</abbr>举行了首届 JavaOne 大会，从此 JavaOne 大会成为世界 Java 开发者一年一度的技术盛会
 
 Java 1.1 发布和 <a href="https://www.haskell.org/definition/">Haskell</a> <abbr title="Haskell 1.4">97</abbr> 正好是同一年
 </div>
@@ -133,10 +135,11 @@ Java 1.1 发布和 <a href="https://www.haskell.org/definition/">Haskell</a> <ab
 [James Gosling 博士]: https://en.wikipedia.org/wiki/James_Gosling
 
 <div id="notes-intro"><small>
-  <p id="notes-intro[0]"><sup>[0]</sup>详见 B 站<a href="https://www.bilibili.com/bangumi/media/md2580">《干物妹！小埋》</a></p>
+  <p id="notes-intro[0]"><sup>[0]</sup>详见 B 站<a href="https://www.bilibili.com/bangumi/media/md2580">《干物妹！小埋》</a><del>《干雾妹小霾》</del></p>
   <p id="notes-intro[1]"><sup>[1]</sup><abbr title="Enterprise resource planning">ERP</abbr>, 企业资源管理<br><abbr title="Customer relationship management">CRM</abbr>, 客户资源管理</p>
   <p id="notes-intro[2]"><sup>[2]</sup>信息来自 <a href="https://www.java.com/zh_CN/about/">java.com/zh_CN/about</a></p>
-  <p id="notes-intro[3]"><sup>[3]</sup>排除增强类型系统安全检查强度和动态检查、运行时异常外；使用<ruby>中间码<rt><a href="https://en.wikipedia.org/wiki/Intermediate_representation">intermediate language</a></rt></ruby>，这也是属于见仁见智的问题，实际上，使用平台无关（全平台兼容）的中间代码作为最终的『二进制』形式而不是直接翻译到机器代码，最开始也给 Java 程序的执行带来了一些问题（虽然现在 Java 的选择也显得越来越符合“时代潮流”了），但是，语言<abbr title="『发布』代码的形式，有时被称为『二进制文件』，一般认为是会被持久化在非易失性 (non-volatile) 存储器 (memory) 上的代码形式">“最终”</abbr>的代码形式只是一个选择是否合适、是否符合定位的问题，不存在优劣之分。</p>
+  <p id="notes-intro[3]"><sup>[3]</sup>Oak 的 primitive number 包括 <code>unsigned</code> 无符号整数<small>（考虑一下它受到了 C++ 启发）</small>；Oak 不存在 <i>private</i> 访问（<code>private</code> 是 package-private）；Oak 早就有 <abbr title="Java 1.5 加入（JSR 201）"><code>enum</code></abbr> 和 <abbr title="Java 1.4 加入（JSR 41）"><code>assert</code></abbr> 了；Oak 的 <a href="https://en.wikipedia.org/wiki/Exception_handling#In_software">exceptions</a> 可以不检查(unchecked)；利用 <code>unprotect</code> 关键字异步异常（比如说系统的 SIGINT，<a href="https://docs.oracle.com/javase/8/docs/api/index.html?java/lang/ThreadDeath.html">ThreadDeath</a>）可以不处理、Oak 支持<a href="https://zh.wikipedia.org/wiki/%E5%A5%91%E7%BA%A6%E5%BC%8F%E8%AE%BE%E8%AE%A1">契约式编程</a>（比如，给子类继承的方法前置逻辑）</p>
+  <p id="notes-intro[4]"><sup>[4]</sup>排除增强类型系统安全检查强度和动态检查、运行时异常外；使用<ruby>中间码<rt><a href="https://en.wikipedia.org/wiki/Intermediate_representation">intermediate language</a></rt></ruby>，这也是属于见仁见智的问题，实际上，使用平台无关（全平台兼容）的中间代码作为最终的『二进制』形式而不是直接翻译到机器代码，最开始也给 Java 程序的执行带来了一些问题（虽然现在 Java 的选择也显得越来越符合“时代潮流”了），但是，语言<abbr title="『发布』代码的形式，有时被称为『二进制文件』，一般认为是会被持久化在非易失性 (non-volatile) 存储器 (memory) 上的代码形式">“最终”</abbr>的代码形式只是一个选择是否合适、是否符合定位的问题，不存在优劣之分。</p>
 </small></div>
 
 ## Contents 内容
@@ -174,8 +177,17 @@ Java 1.1 发布和 <a href="https://www.haskell.org/definition/">Haskell</a> <ab
 
 ## Thanks 特别感谢
 
+> 排名不分先后；这是一个<ruby>集合<rt>set</rt></ruby>；而且当然是<abbr title="理论上的集合本身与线性表的主要区别在于集合不关心元素顺序，有序集（sorted set）只是说在『集合遍历』操作时输出对象存在顺序">无序</abbr>的
+
 + [《深入理解 Java 虚拟机（第二版）》](https://duckduckgo.com/?q=%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java%E8%99%9A%E6%8B%9F%E6%9C%BA%EF%BC%88%E7%AC%AC2%E7%89%88%EF%BC%89&t=ffab&atb=v163-1&ia=web) 从上面获取了一些 Java 历史相关的信息~
 + [《Kotlin 极简教程》](https://segmentfault.com/a/1190000010306636) 从上面了整理了关于泛型的性质描述~
++ [W3Schools](https://www.w3schools.com/tags/tag_abbr.asp) 没有你们我不知道有这些标签可用~
++ [Hello, I am Conmajia.](https://www.cnblogs.com/conmajia/) `<ruby>` notation 的风格就是从这里来的~
++ [GitHub Pages](https://pages.github.com/) （当然也包括 [Jekyll] 项目啦）
++ [Markdown] Inline HTML 爽到（
+
+[Jekyll]: https://jekyllrb.com/
+[Markdown]: https://commonmark.org
 
 ## Recommended Links 推荐链接
 
