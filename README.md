@@ -488,7 +488,7 @@ function sety(s) {document.getElementsByTagName('output')['y'].innerHTML=s;}
 
 ### MathJax 编写的 TeX 数学公式
 
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 $$\sum_{n=1}^\infty 1/n^2 = \frac{\pi^2}{6}$$
 
