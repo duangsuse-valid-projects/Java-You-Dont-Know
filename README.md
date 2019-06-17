@@ -74,10 +74,27 @@ Sun 定义的 Java 技术体系包含以下项目：
     <dd><div id="intro-classfile-links">
       <a href="https://duckduckgo.com/?q=Javaassist&t=ffab&atb=v163-1&ia=web">JavaAssist Java bytecode engineering toolkit</a>
       <br><a href="http://asm.ow2.org/">ObjectWeb ASM bytecode manipulation and analysis framework</a>
-      <br><a href="https://github.com/apache/commons-bcel">Apache Commons Bytecode Engineering Library</a>
+      <br><a href="https://github.com/apache/commons-bcel">Apache Commons Bytecode Engineering Library (BCEL)</a>
+      <br><a href="https://github.com/cglib/cglib">CGLib</a>
     </div></dd>
   <dt>Java 虚拟机<sub>（在各种实际硬件和操作系统平台上的实现）</sub></dt>
-    <dd><div id="intro-jvm-links">
+    <dd><p id="intro-jvm">JVM 是一个虚拟机，它是 Java 和众多其他 JVM 语言的运行环境，它允许自己的<ruby>本地<rt>native</rt></ruby>计算机执行 Java 字节码
+    <br>知名的 JVM 语言包括 <ul>
+      <li>Java (Oracle Java, formerly Sun Java)</li><br>Java 是一种通用编程语言，它的代码基于类，实现面向对象编程（虽然不是纯 OO 语言，因为它包含<ruby>基本类型<rt>primitive types, likely <code>int</code></rt></ruby>），并且设计为使尽可能减少强<a href="https://zh.wikipedia.org/wiki/%E8%80%A6%E5%90%88%E6%80%A7_(%E8%A8%88%E7%AE%97%E6%A9%9F%E7%A7%91%E5%AD%B8)">耦合</a>程序。 它旨在让应用程序开发人员编写一次，在任何地方运行（"<i>WORA</i>"），这意味着编译的 Java 代码可以在所有支持 Java 的平台上运行而无需重新编译。<br>
+      <li><a href="https://kotlinlang.org/">Kotlin</a> (JetBrains)</li><br>发展迅速的 JVM 编程语言；其名字源自于俄罗斯<abbr title="Saint Petersburg">圣彼得堡</abbr>的一座小岛<abbr title="Kotlin; Russian: Котлин">科特林</abbr>
+      <br>Kotlin 于 2011 年被 <a href="https://en.wikipedia.org/wiki/JetBrains">JetBrains</a> （知名的开发工具公司）谋划并于 2012 年开源其第一个编译工具版本，现在已经有 JVM, JavaScript<sub>(Plain, AMD, UMD, CommonJS)</sub>, Native 等多种目标语言的编译实现
+      <br>Kotlin 支持可空类型系统、<abbr title="底类型；kotlin.Nothing::class, 类似 java.lang.Void 但是不为空">Bottom Type</abbr>、闭包、类型投影等 Java 严重缺失的概念，语言本身比 Java 更富语法糖化，同样的程序甚至完全相同的控制结构算法，用 Kotlin 表达会更简短好看；Kotlin 简洁、安全、完全支持与 Java API 互操作、对语言工具（比如 <abbr title="集成开发环境, Integrated development environment">IDE</abbr>）友好
+      <br>Kotlin 是一个从来不缺特性的语言 — <abbr title="kotlinx.coroutines">协程</abbr>、类型推导、<b>完全</b>面向对象（<code>class</code>, <code>object</code>, <code>companion object</code>）、first-class 面向对象代理、属性（property）、密封类<sub>(<code>sealed class</code>)</sub>、数据类<sub>(<code>data class</code>)</sub>和数据类解构赋值、注解类<sub>(<code>annotation class</code>)</sub>、<code>internal</code> 访问限制、<code>lateinit var</code> 实例字段属性、闭包<sub>(lambda)</sub>、高阶函数、<ruby>尾递归<rt><code>tailrec</code></rt></ruby>、灵活控制流<sub>(labled chunk)</sub>、<code>if</code> 表达式、<code>when</code> 分支判断、内联（inline）方法和类、<code>vararg</code>、操作符重载、和 <code>Object#equals</code> 等价的 (<code>==</code>) 二元逻辑运算符、<code>infix</code> notation (e.g. <code>to</code>, <code>until</code>)、elvis (<code>?:</code>) 和 null 传导 (<code>?.</code>)、区间和 <code>Pair</code>、多行字符串、强制标识符合法化（<code>val `#_#` = 0x0_0</code>）、软化关键字（soft keywords）、<code>in out</code> 和声明处型变、<code>reified</code> 内联实现真泛型<br>
+      <li><a href="http://groovy-lang.org/">Groovy</a> (Apache)</li>
+      <li><a href="https://www.scala-lang.org/">Scala</a></li>
+      <li><a href="https://clojure.org/">Clojure</a></li>
+      <li><a href="https://github.com/mozilla/rhino">JavaScript (Mozilla Rhino)</a></li>
+      <li><a href="https://github.com/JetBrains/jdk8u_nashorn">JavaScript (Oracle Nashorn)</a> <a href="https://hg.openjdk.java.net/jdk8/jdk8/nashorn/">[at OpenJDK]</a></li>
+      <li><a href="https://www.jruby.org/">JRuby</a></li>
+      <li><a href="https://www.jython.org/">Jython</a></li>
+      <li><a href="https://github.com/beanshell/beanshell">BeanShell</a></li>
+    </ul>
+    </p><div id="intro-jvm-links">
       <a href="https://github.com/imkiva/KiVM">KiVM Java VM (spec version 8 and only Java 8 is supported) implementation in C++</a>
     </div></dd>
   <dt>Java 语言 API <sub>（<code>java.*</code> 标准库）</sub></dt>
