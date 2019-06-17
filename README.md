@@ -448,7 +448,7 @@ Input !
   <fieldset>
     <legend>New user:</legend>
     Name: <input type="text" placeholder="you name" maxlength="10" value="duangsuse"><br>
-    Age: <input type="number" max="80"><br>
+    Age: <input type="number" max="80" value="17"><br>
     Gender: <select>
       <option value="♂">Boy</option>
       <option value="♀">Girl</option>
@@ -468,6 +468,36 @@ Input !
   <input type="submit" value="Submit 👓">
 </form>
 
+### Reference stylesheet and JavaScript tag
+
+[Neko CSS](https://neko-dev.github.io/neko.css/)
+
+```html
+<link rel="stylesheet" type="text/css" href="https://neko-dev.github.io/neko.css/dist/css/neko.css">
+```
+
+<link rel="stylesheet" type="text/css" href="https://neko-dev.github.io/neko.css/dist/css/neko.css">
+
+<script type="text/javascript">
+function sety(s) {document.getElementsByTagName('output')['y'].innerHTML=s;}
+</script>
+<button id="intro_typesetting_neko_ia" class="neko-btn merge shadow neko-color-green" onclick="sety('<var>dr</var>oid 📱')">Android</button>
+<button id="intro_typesetting_neko_ib" class="neko-btn merge shadow neko-color-blue" onclick="sety('win 🖥')">Windows</button>
+<br>
+<output name="y" for="intro_typesetting_neko_ia intro_typesetting_neko_-_ib"></output>
+
 ### MathJax 编写的 TeX 数学公式
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+$$\sum_{n=1}^\infty 1/n^2 = \frac{\pi^2}{6}$$
+
+$$(varsupsetneq)\varsupsetneq (supset)\supset (sqsupseteq)\sqsupseteq (star)\star (ast)\ast$$
+
+$$f(a) = \frac{1}{2(pi)\pi i} (oint)\oint\frac{f(z)}{z-a}dz$$
+
+$$
+(label origh) (hat)\hat{h}(t) = \sum_{k = 1}^{L} a_k(t^i_a)(cos)\cos(2\pi k f_0(t^i_a)(t - t^i_a) + (phi)\phi_k(t^i_a))
+$$
 
 ### echarts 数据图表
