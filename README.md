@@ -488,7 +488,7 @@ function sety(s) {document.getElementsByTagName('output')['y'].innerHTML=s;}
 
 ### MathJax 编写的 TeX 数学公式
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
 
 $$\sum_{n=1}^\infty 1/n^2 = \frac{\pi^2}{6}$$
 
@@ -501,3 +501,55 @@ $$
 $$
 
 ### echarts 数据图表
+
+#### BarChart
+
+<script src="https://www.echartsjs.com/examples/vendors/echarts/echarts.min.js" defer></script>
+
+<style>
+#chart { width: 512px; height: 300px }
+</style>
+<div id="chart"></div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', (function(){
+var testChart = echarts.init(document.getElementById('chart'));
+
+var option = {
+  title: { text: '小林家的苹果派' },
+  toolbox: {
+      feature: {
+          dataZoom: { yAxisIndex: 'none' },
+          restore: {},
+          saveAsImage: {}
+      }
+  },
+  tooltip: {},
+  dataZoom: [
+      {
+          show: true,
+          realtime: true,
+          start: 0,
+          end: 512
+      },
+      {
+          type: 'inside',
+          realtime: true,
+          start: 0,
+          end: 512
+      }
+  ],
+  legend: { data: ['苹果派份数'], x: 'middle' },
+  xAxis: {
+      data: ['龙 A', '龙 B', '龙 C', '小林']
+  },
+  yAxis: {},
+  series: [{
+      name: '苹果派份数',
+      type: 'bar',
+      data: ['2', '1', '4', '9']
+  }]
+};
+
+testChart.setOption(option);
+}));
+</script>
