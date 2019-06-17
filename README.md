@@ -94,7 +94,10 @@ C# 和 Java 的语法糖程度都比较低">启发</abbr>
       <br>和 Scala 相比，Kotlin 是为工程师设计，更符合实际工程实践需要，语法类似 Java 和 Scala
       <br>目前 Kotlin 已经成为 Android 开发的流行语言，被誉为 Android 平台的 <abbr title="Apple 开发的一门编程语言，可以类比 Mozilla Rust">Swift</abbr>
       <br>虽然是门『新语言』，Kotlin 的学习曲线极其平缓、学习量相当于学习一个新框架，只需要看几十行代码就可以扔掉 Java，开始学着使用 Kotlin 编程了<br>
-      <li><a href="http://groovy-lang.org/">Groovy</a> (Apache)</li>
+      <li><a href="http://groovy-lang.org/">Groovy</a> (Apache)</li><p>
+      Apache Groovy 是一个可选类型、动态性强的语言，它有着静态类型和静态编译的能力，旨在通过提供简洁、符合习惯、易读、易学语法的方式提高 JVM 开发人员的工作效率。
+      <br>它和任何 Java 程序都良好兼容，并且可以在极短的时间里让你的应用拥有强大的功能 — 脚本支持、<abbr title="Domain-Specific Language，领域专属语言，比如专门为纯文本交互游戏开发的语言 、专门为文字处理开发的语言 SED, AWK、为文字游戏设计的 TADS、Graphviz 的 DOT">DSL</abbr> 支持，函数式编程、<ruby>编译期<rt>compile-time</rt></ruby>和<ruby>运行期<rt>run-time</rt></ruby>的<abbr title="metaprogramming，也被称为 inspect（自我审视），程序访问关于自己本身（比如，函数的名字）信息的技术">元编程</abbr>。
+      </p>
       <li><a href="https://www.scala-lang.org/">Scala</a></li>
       <li><a href="https://clojure.org/">Clojure</a></li>
       <li><a href="https://github.com/mozilla/rhino">JavaScript (Mozilla Rhino)</a></li>
