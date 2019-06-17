@@ -386,7 +386,7 @@ line breaks
 </picture>
 
 <video controls="">
-  <source src="https://mdui-aliyun.cdn.w3cbus.com/docs/assets/docs/video/demo_mp4.mp4" type="video/mp4">
+  <source src="http://mdui-aliyun.cdn.w3cbus.com/docs/assets/docs/video/demo_mp4.mp4" type="video/mp4">
   <param name="autoplay" value="true">
 </video>
 <br>
