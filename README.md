@@ -386,7 +386,7 @@ line breaks
 </picture>
 
 <video controls="">
-  <source src="http://mdui-aliyun.cdn.w3cbus.com/docs/assets/docs/video/demo_mp4.mp4" type="video/mp4">
+  <source src="https://mdui-aliyun.cdn.w3cbus.com/docs/assets/docs/video/demo_mp4.mp4" type="video/mp4">
   <param name="autoplay" value="true">
 </video>
 <br>
@@ -488,7 +488,7 @@ function sety(s) {document.getElementsByTagName('output')['y'].innerHTML=s;}
 
 ### MathJax 编写的 TeX 数学公式
 
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 $$\sum_{n=1}^\infty 1/n^2 = \frac{\pi^2}{6}$$
 
