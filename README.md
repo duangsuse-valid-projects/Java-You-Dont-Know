@@ -1,45 +1,6 @@
-# <ruby><span style="color:brown">Java</span> You-Dont-Know<rt>你不知道的 Java</rt></ruby> [![badge-handwrote](https://img.shields.io/badge/handwrote-knowledge_base-blueviolet.svg?style=flat-square)](https://en.wikipedia.org/wiki/Knowledge_base) ![badge-javaversion](https://img.shields.io/badge/java-≤1.8-brown.svg?style=flat-square)
+# <ruby><span style="color:brown">Java</span> You-Dont-Know<rt>你不知道的 Java</rt></ruby> [![badge-handwrote](https://img.shields.io/badge/handwrote-knowledge_base-blueviolet.svg?style=flat-square)](https://en.wikipedia.org/wiki/Knowledge_base) ![badge-javaversion](https://img.shields.io/badge/java-≤1.8-brown.svg?style=flat-square) <noscript><a id="pages" href="https://duangsuse-valid-projects.github.io/Java-You-Dont-Know/"><img alt="visit pages" src="https://img.shields.io/badge/github-pages-blue.svg?style=flat-square" /></a></noscript>
 
 <link rel="stylesheet" href="resources/css/github-corner.css" type="text/css">
-
-<script>
-// I could not make my javascript codes beautiful, but it works...
-document.addEventListener('DOMContentLoaded', (() => {
-  const
-    github = document.querySelector('#github'),
-    github_Hide_From = document.querySelector('#github-hided');
-
-  const github_PageY_Threshold = (github_Hide_From!=null?github_Hide_From.offsetTop:400);
-  const attrib_Hidden = 'hidden';
-
-  const
-    flagElem = (elm, flag) => elm===null?0: elm.setAttribute(flag,''),
-    unflagElem = (elm, flag) => elm===null?0: elm.removeAttribute(flag);
-
-  const show = (elm) => unflagElem(elm, attrib_Hidden);
-  const hide = (elm) => flagElem(elm, attrib_Hidden);
-
-  const fadein = 'github-animate-opacity';
-
-  // so silly
-  document.body.onscroll = (sd) => {
-    let new_y = sd.pageY;
-
-    if (new_y >=github_PageY_Threshold) {
-
-      { github.style.animation = 'fadeout 1s'; github.style.animationIterationCount=1; }
-
-      github.onanimationend = () => { hide(github); github.classList.add(fadein);}
-    } else {
-      if(github.style.animation!==null) github.style.animation = null;
-      github.onanimationend = () => {github.classList.remove(fadein);};
-      show(github);
-    }
-  };
-
-  show(github); // JavaScript *is* enabled
-}));
-</script>
 
 <a hidden id="github" href="https://github.com/duangsuse-valid-projects/Java-You-Dont-Know" class="github-corner github-animate-opacity" aria-label="View project on GitHub">
     <svg viewBox="0 0 250 250" aria-hidden="true">
@@ -360,6 +321,47 @@ bundle exec jekyll serve
 git checkout master
 popd
 ```
+
+<script>
+// I could not make my javascript codes beautiful, but it works...
+document.addEventListener('DOMContentLoaded', (() => {
+  const
+    github = document.querySelector('#github'),
+    github_Hide_From = document.querySelector('#github-hided');
+
+  const github_PageY_Threshold = (github_Hide_From!=null?github_Hide_From.offsetTop:400);
+  const attrib_Hidden = 'hidden';
+
+  const
+    flagElem = (elm, flag) => elm===null?0: elm.setAttribute(flag,''),
+    unflagElem = (elm, flag) => elm===null?0: elm.removeAttribute(flag);
+
+  const show = (elm) => unflagElem(elm, attrib_Hidden);
+  const hide = (elm) => flagElem(elm, attrib_Hidden);
+
+  const fadein = 'github-animate-opacity';
+
+  // so silly
+  document.body.onscroll = (sd) => {
+    let new_y = sd.pageY;
+
+    if (new_y >=github_PageY_Threshold) {
+
+      { github.style.animation = 'fadeout 1s'; github.style.animationIterationCount=1; }
+
+      github.onanimationend = () => { hide(github); github.classList.add(fadein);}
+    } else {
+      if(github.style.animation!==null) github.style.animation = null;
+
+      github.onanimationend = () => {github.classList.remove(fadein);};
+      // waiting for fadeout, later
+      show(github);
+    }
+  };
+
+  show(github); // JavaScript *is* enabled
+}));
+</script>
 
 ## Development: Markdown Inline Typesetting tests 内联排版测试
 
