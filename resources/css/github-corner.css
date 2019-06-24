@@ -1,0 +1,60 @@
+.github-corner {
+  text-decoration: none;
+  position: fixed;
+  z-index: 1;
+  border-bottom: 0;
+  right: 0;
+  top: 0;
+}
+
+.github-corner svg {
+    color: #fff;
+    fill: var(--theme-color, #b99342);
+    height: 80px;
+    width: 80px
+}
+
+.rotateanim:active {
+    animation: gitarm .57s ease-in-out
+}
+
+.github-corner:hover .octo-arm {
+    animation: gitarm .57s ease-in-out
+}
+
+@keyframes gitarm {
+    0%,
+    to {
+        -webkit-transform: rotate(0);
+        transform: rotate(0)
+    }
+    20%,
+    60% {
+        -webkit-transform: rotate(-25deg);
+        transform: rotate(-25deg)
+    }
+    40%,
+    80% {
+        -webkit-transform: rotate(10deg);
+        transform: rotate(10deg)
+    }
+}
+
+.github-animate-opacity {
+  opacity: 1;
+  animation: fadein 0.8s;
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  animation-delay: 0ms;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: none;
+}
+
+@keyframes fadein {
+  0% { opacity: 0 }
+  100% { opacity: 1 }
+}
+@keyframes fadeout {
+  0% { opacity: 1 }
+  100% { opacity: 0 }
+}
