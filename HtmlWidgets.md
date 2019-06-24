@@ -270,4 +270,103 @@ onload(() => {
 });
 </script>
 
+<link rel="stylesheet" href="resources/css/security-effect.css" />
+
+## <a id="cysp">Unknown</a> <a id="chickenz" class="chicken-anim">🐔</a>
+
+<div id="🐣">
+  <button class="chicken-anim" id="chkens0">🐔</button>
+  <br><button class="chicken-anim" id="chkens1">🐔</button>
+  <br><button class="chicken-anim" id="chkens2">🐔</button>
+  <br><button class="chicken-anim" id="chkens3">🐔</button>
+  <br><button class="chicken-anim" id="chkens4">🐔</button>
+  <br><button class="chicken-anim" id="chkens5">🐔</button>
+  <br><button class="chicken-anim" id="chkens6">🐔</button>
+  <br><button class="chicken-anim" id="chkens7">🐔</button>
+  <br><button class="chicken-anim" id="chkens8">🐔</button>
+  <br><br>
+  <button id="cc"><text class="chicken-anim">🤔</text> 点击一下会发生什么呢？</button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.2/howler.core.min.js" integrity="sha256-q2vnVvwrx3RbYXPyAwx7c2npmULQg2VdCXBoJ5+iigs=" crossorigin="anonymous"></script>
+<script>
+onload(()=> {
+  const loc = 'resources/audio/15e14b2ca405cc4a0419f4091f125b7235b8264d.mp3';
+  const chilk = '🐣';
+
+  let tried = 0; // 要按 N 次才有效果...
+  let lyrics = false;
+
+  const byId = document.getElementById.bind(document);
+  let ud83dudc14 = new Howl({src:[loc],autoplay:false});
+  let chi = byId(chilk);
+  let cc = byId('cc');
+
+  function truncMovePoint(dx) { while (Math.trunc(dx) !==dx) {dx = dx*10;} return dx; }
+  function accMovePoint(dx, greater=1) { while (dx <greater) {dx = dx*10;} return dx; }
+
+  let lyric_points = range(1,8+1).map(i => byId(`chkens${i}`));
+  function pick(xs) {
+    let i = truncMovePoint(Math.random());
+    return xs[i %xs.length];
+  }
+
+  // Why dont use ES6 template string?
+  let 鸡lyrics = "只因你太美 baby 只因你太美 baby|只因你实在是太美 baby 只因你太美 baby|迎面走来的你让我如此蠢蠢欲动|这种感觉我从未有|Cause I got a crush on you who you|你是我的我是你的谁|再多一眼看一眼就会爆炸|再近一点靠近点快被融化|想要把你占为己有baby bae|不管走到哪里都会想起的人是你 you you|我应该拿你怎样|uh 所有人都在看着你|我的心总是不安|oh 我现在已病入膏肓|eh eh 难道真的因为你而疯狂吗|我本来不是这种人|因你变成奇怪的人|第一次呀变成这样的我|不管我怎么去否认|只因你太美 baby 只因你太美 baby|只因你实在是太美 baby 只因你太美 baby|oh eh oh 现在确认地告诉我|oh eh oh 你到底属于谁|oh eh oh 现在确认地告诉我|oh eh oh 你到底属于谁 就是现在告诉我|跟着这节奏 缓缓 make wave|甜蜜的奶油 it's your birthday cake|男人们的 game call me 你恋人|别被欺骗愉快的 I wanna play|我的脑海每分每秒只为你一人沉醉|最迷人让我神魂颠倒是你身上香水|oh right baby I'm fall in love with you|我的一切你都拿走只要有你就已足够|我到底应该怎样|uh 我心里一直很不安|其他男人们的视线|Oh 全都只看向你的脸|Eh eh 难道真的因为你而疯狂吗|我本来不是这种人|因你变成奇怪的人|第一次呀变成这样的我|不管我怎么去否认|只因你太美 baby 只因你太美 baby|只因你实在是太美 baby 只因你太美 baby|我愿意把我的全部都给你|我每天在梦里都梦见你还有我闭着眼睛也能看到你|现在开始我只准你看我|I don't wanna wake up in dream 我只想看你这是真心话|只因你太美 baby 只因你太美 baby|只因你实在是太美 baby 只因你太美 baby|oh eh oh 现在确认的告诉我|oh eh oh 你到底属于谁|oh eh oh 现在确认的告诉我|oh eh oh 你到底属于谁就是现在告诉我".split("|");
+
+  const chicken_anim = 'chicken-anim';
+
+  // recursive callback until 鸡lyrics is empty
+  let $delay_max = 1000;
+  const selectJTime = ()=> accMovePoint(Math.random(), $delay_max);
+  let reent;
+  const 鸡你太美 = ()=>setTimeout(reent=()=> {
+    if (!lyrics) return;
+    let chik = 鸡lyrics.pop();
+    let elem = pick(lyric_points);
+    console.log("Selected: ", elem, chik);
+    elem.innerText += chik + "\t";
+
+    if (chik.length %2==0) {
+      elem.classList.remove(chicken_anim);
+    }
+
+    if (鸡lyrics.length ===0) return;
+    let next_time = selectJTime();
+    console.log("Next launch: ", next_time);
+    setTimeout(reent, next_time);
+
+    $delay_max -= accMovePoint(Math.random(), 20);
+    if ($delay_max <500) $delay_max=500;
+  }, selectJTime());
+
+  for (let elem of lyric_points) {
+    elem.onclick = () => {elem.innerText='🐣';elem.classList.add(chicken_anim)};
+  }
+
+  cc.onclick = ()=> {
+    switch (tried) {
+    case 0:
+      byId('cysp').innerText = 'Chicken! You are SO PREETY!';
+      ud83dudc14.play();
+      cc.innerText = '好奇心害死猫！🐔';
+      break;
+    case 1:
+      ud83dudc14.play();
+      cc.innerText = '😭 不！放我出去！';
+      break;
+    case 2:
+      lyrics = true;
+      鸡你太美();
+      break;
+    default:
+      alert("WARNING: κȜùηȇΓ%ƀő̌	ʦʚưɛÊȗɯȬĝŏ3ǡ˸Ŏʻ˄ČΏğķƊʣ¶ ɮ!η\"À#Γ$ɑ%ū&Į'ȥ(ȕ)α*̽+Φ,ƀ-ƿ.ʝ/Ȕ0ͫ1͖2ˍ3ȫ4ļ5ť6ƨ7$8½9Ͱ:;Ȣ<5=ˏ>Ə?̀@ͩA̧BʹCĂDʯEwF GȡHI;J KLÃMNɞOɡPđQ˩R5SɸTɕUϡVʪWΆẌYƫZ˭[Ĵ\ƚ]ˍ^ƫ_Ǒ`DaăbϑcŻdÇeĺfΉgγhĲişjBkʩlξmˢnÔoǃpɝqŸrƁsÃtǒuʮvşwƄx¬yƍzĖ{ȧ|Ŀ}ϖ~ǣ΢ΰȹŇΉ͆śŗΎ¨ş£ŅΏ½Ō˶͖͞ΆƞÙ̆ιɉ΍ɯɾşĻ@Ȇ˶ Ʈ¡¢ŷ£Ω¤Ȅ¥̏¦ĳ§Ē¨A©³ª«K¬·­ǁ®Ɔ¯´°ͅ±6²¤³ˮ´kµ͚¶·˭¸̎¹ōº¸»΋¼T½ĺ¾΃¿̄À̷ÁųÂǆÃÄ,Å˂ÆȺÇ˱ÈÉξÊËŬÌġÍɶÎǣÏ͸ÐΛÑΣÒτÓǽÔɃÕǵÖā×̇ØáÙʭÚɊÛČÜÝɋÞ˷ß˒àOá͹âɚãθäæåȕæɬçlè¢éɀêɡëȮìĭíǊî̿ïɁðàñˊò΄ó^ôͮõǫö¶÷ȂøǐùȕúόûƊüǖýîþȓÿĤĀƨāĖĂ©ăĐĄązĆćƄĈƢĉȗĊ̭ċ̼ČϓčȢĎͺďƥĐ˙đuĒēĔóĕͲĖðėϟĘðęǻĚĞěɷĜǊĝǡĞŦğɗĠ¤ġÌĢʹģOĤȻĥĦɛħ®Ĩƶĩ¡Īʟī");
+      cc.innerHTML = '<img src="https://raw.githubusercontent.com/XUranus/jinitaimei/master/demo.gif" />';
+      ud83dudc14.stop();
+    }
+    ++tried;
+  };
+});
+</script>
+
 $$\textbf{Quod erat demonstrandum.}$$
