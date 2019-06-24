@@ -11,6 +11,9 @@
 
 Java 是什么？Java 是领先全球的[计算机程序设计]技术之一。
 
+> 以下资源若无特别提及 Java 的语言版本，则默认指 Java 8 的语法 / 特性 / 概念…
+> 如果有不准确但不影响理解的内容，则按照一般约定理解。
+
 Java 是一门[程序设计语言]，它更是一个[软件开发]平台，根据平台的组成部分、主要业务领域区分，Java 技术体系可以被分为 __4__ 个子体系：
 
 [计算机程序设计]: https://en.wikipedia.org/wiki/Computer_programming
@@ -19,9 +22,9 @@ Java 是一门[程序设计语言]，它更是一个[软件开发]平台，根�
 
 + __Java Card__：支持一些小程序（[Applets]）在诸如[智能卡]等 __小内存设备__ 上的平台
 + __Java ME__（Micro Edition，J2ME）：支持 Java 运行在智能手机、<abbr title="Personal Digital Assistant">PDA</abbr> 等设备上的技术，对 JavaSE 的 API __有所精简__，并且加入了针对嵌入式通讯设备的 API 支持
-+ __Java SE__（Standard Edition，J2SE）：支持面向桌面工作站（和个人电脑、平板等）上如桌面窗口应用程序开发的 Java，提供了完整的 Java 核心 API（比如 [Collections 框架]）以及开发使用的辅助框架（比如 [javax.swing], [java.awt]）
++ __Java SE__（Standard Edition，J2SE）：支持面向桌面工作站（和个人电脑、平板等）上如桌面窗口应用程序开发的 Java，提供了完整的 Java 核心 API（比如 [Collections 框架]）以及开发使用的辅助框架（比如 [javax.swing], [java.awt], Java Reflection APIs）
 + __Java EE__（Enterprise Edition，J2EE）：支持使用了多层架构的企业级应用程序（比如 [ERP] 和 [CRM]<a href="#notes-intro[1]"><sup>[1]</sup></a>），以开发各类对应用程序健壮性、安全性、可测试性、可部署性、性能、并发支持性和软件工程理论有较强要求的应用程序（比如生产级别的 <abbr title="client/server">C/S</abbr> 架构服务器程序）
-<br>著名的 Java EE 技术例如 [Java Bean] (组合<ruby>可序列化<rt><code>@java.io.Serializable</code></rt><abbr title="java.lang.Object">对象</abbr></ruby>, <ruby>实例<rt>instance</rt></ruby>比如 EJB); [Web servlet] 架构; [JNDI] 服务访问接口架构
+<br>著名的 Java EE 技术例如 [Java Bean] (组合<ruby>可序列化<rt><code>@java.io.Serializable</code></rt><abbr title="java.lang.Object">对象</abbr></ruby>, <ruby>实例<rt>instance</rt></ruby>比如 EJB); [Web servlet] 架构; [JNDI] 服务访问接口架构、[JCA]、[CDI] 上下文<abbr title="利用诸如类架构器、setter 方法的方式将依赖对象信息提供给目标类实例而无须显式构造依赖对象强耦合">依赖注入</abbr>、[JDBC] Java 数据库链接、[JTA] Java 事务性 API、[JPA] Java 持久化 API、[JMS] Java 消息队列服务、[JMX] Java 管理扩展、[JAR] Java 归档文件 / [WAR] Web 应用资源文件部署等等
 
 [ERP]: https://en.wikipedia.org/wiki/Enterprise_resource_planning
 [CRM]: https://en.wikipedia.org/wiki/Customer_relationship_management
@@ -29,6 +32,8 @@ Java 是一门[程序设计语言]，它更是一个[软件开发]平台，根�
 [Java]: https://www.oracle.com/java/
 [1.8]: https://docs.oracle.com/javase/specs/jls/se8/html/index.html
 [干物]: https://zh.moegirl.org/%E5%B9%B2%E7%89%A9%E5%A5%B3#
+
+[CDI]: https://docs.oracle.com/javaee/6/tutorial/doc/giwhl.html
 
 [C++]: https://en.wikipedia.org/wiki/C%2B%2B
 [Haskell]: https://www.haskell.org/
@@ -42,6 +47,16 @@ Java 是一门[程序设计语言]，它更是一个[软件开发]平台，根�
 [Java Bean]: https://en.wikipedia.org/wiki/JavaBeans
 [Web servlet]: https://en.wikipedia.org/wiki/Java_servlet
 [JNDI]: https://en.wikipedia.org/wiki/Java_Naming_and_Directory_Interface
+
+[JCA]: https://en.wikipedia.org/wiki/Java_EE_Connector_Architecture
+[JDBC]: https://www.oracle.com/technetwork/java/javase/jdbc/index.html
+[JTA]: https://en.wikipedia.org/wiki/Java_Transaction_API
+[JPA]: https://en.wikipedia.org/wiki/Java_Persistence_API
+[JMS]: https://en.wikipedia.org/wiki/Java_Message_Service
+[JMX]: https://en.wikipedia.org/wiki/Java_Management_Extensions
+
+[JAR]: https://docs.oracle.com/javase/tutorial/deployment/jar/apiindex.html
+[WAR]: https://en.wikipedia.org/wiki/WAR_(file_format)#cite_note-1
 
 <div id="intro-javase8-stack" align="center">
   <details open>
@@ -57,11 +72,11 @@ Sun 定义的 Java 技术体系包含以下项目：
 <dl>
   <dt>Java 程序设计语言</dt>
     <dd><div id="intro-lang">
-      Java 程序设计语言是 Java 开发平台的 <b>灵魂</b>
+      Java 程序设计语言是 Java 开发平台的 <b>灵魂</b><br>
       <br>Java 是一门 <b>强类型、静态检查、显式类型</b> 的“低糖”语言，它支持<a href="https://en.wikipedia.org/wiki/Programming_paradigm">面向对象编程、面向对象多态、并发编程、事件驱动、反射元编程、泛型编程、Annotation 处理</a>，当然，也包含基本的<a href="https://en.wikipedia.org/wiki/Functional_programming">函数式编程</a>和<a href="https://en.wikipedia.org/wiki/Recursion_(computer_science)">递归</a>支持
-      <br>Java 是使用<abbr title="garbage collection">自动内存管理</abbr>的程序设计语言，这意味着，你不需要考虑如何为这门语言的『值』分配内存空间。
+      <br><br>Java 是使用<abbr title="garbage collection">自动内存管理</abbr>的程序设计语言，这意味着，你不需要考虑如何为这门语言的『值』分配内存空间。
       Java 的对象会在需要时被 <code>new</code> 创建，不可能被访问时自动丢弃。
-      <br>Java 很大程度上类似 C++，但没有采用 C++ 的<abbr title="指针是计算机科学 PLT 里的一种数据类型概念。1964 年它被计算机科学家 Harold Lawson 首创；C99、Ada95、FreeBasic、C# 等语言都对指针概念的良好支持，用于进行内存单元对象的偏移取值等运算">『指针』</abbr>模型，只支持『<ruby>可空<rt>nullable</rt>』</ruby>引用和提供 <code>native</code> 方法来取代，并且移除了 C++ 里的<abbr title="operator overloading">操作符重载</abbr>和<a href="https://zh.wikipedia.org/wiki/%E7%BB%A7%E6%89%BF_(%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6)">多继承</a>，用 <code>interface</code> 接口规范定义取代。
+      <br><br>Java 很大程度上类似 C++，但没有采用 C++ 的<abbr title="指针是计算机科学 PLT 里的一种数据类型概念。1964 年它被计算机科学家 Harold Lawson 首创；C99、Ada95、FreeBasic、C# 等语言都对指针概念的良好支持，用于进行内存单元对象的偏移取值等运算">『指针』</abbr>模型，只支持『<ruby>可空<rt>nullable</rt>』</ruby>引用和提供 <code>native</code> 方法来取代，并且移除了 C++ 里的<abbr title="operator overloading">操作符重载</abbr>和<a href="https://zh.wikipedia.org/wiki/%E7%BB%A7%E6%89%BF_(%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6)">多继承</a>，用 <code>interface</code> 接口规范定义取代。
       <br>自 <a href="https://www.oracle.com/technetwork/java/javase/archive-139210.html#top">Java 1.5</a> 以来，Java 引入了类型安全的 <code>enum</code>、值类型自动装箱拆箱、基于泛型擦除的泛型检查、不定长参数、foreach (<code>for (VarModifier TypedVarId: Expression)</code>) 等特性，Java 技术进入了新时代。
       <br><br>Sun Microsystems 这么描述 Java:
       <br><blockquote>Java 是个简单、面向对象、分布式、解释性、健壮、安全、与系统平台无关、可移植、高性能、多线程和动态灵活的编程语言</blockquote>
@@ -69,14 +84,15 @@ Sun 定义的 Java 技术体系包含以下项目：
       <br><a href="https://github.com/antlr/grammars-v4/blob/master/java8/Java8.g4#L877">Java 8 ANTLR Grammar</a>
       <br><a href="https://docs.oracle.com/javase/specs/jls/se8/html/index.html">Java 8 Language Spefification</a>
       <br><a href="https://docs.oracle.com/javase/specs/jvms/se8/html/index.html">Java 8 JVM Spefification</a>
-    </div></div></dd>
+    </div></div><br></dd>
   <dt>Class 文件格式<sub>（Java 字节码格式）</sub></dt>
     <dd><div id="intro-classfile-links">
       <a href="https://duckduckgo.com/?q=Javaassist&t=ffab&atb=v163-1&ia=web">JavaAssist Java bytecode engineering toolkit</a>
       <br><a href="http://asm.ow2.org/">ObjectWeb ASM bytecode manipulation and analysis framework</a>
       <br><a href="https://github.com/apache/commons-bcel">Apache Commons Bytecode Engineering Library (BCEL)</a>
       <br><a href="https://github.com/cglib/cglib">CGLib</a>
-    </div></dd>
+      <br><a href="https://github.com/java-decompiler/jd-gui">Java decompiler GUI</a>
+    </div><br></dd>
   <dt>Java 虚拟机<sub>（在各种实际硬件和操作系统平台上的实现）</sub></dt>
     <dd><p id="intro-jvm">JVM 是一个虚拟机，它是 Java 和众多其他 JVM 语言的运行环境，它允许自己的<ruby>本地<rt>native</rt></ruby>计算机执行 Java 字节码
     <br>知名的 JVM 语言包括 <ul>
@@ -87,11 +103,11 @@ Sun 定义的 Java 技术体系包含以下项目：
 Kotlin 的语法从结构上和 Gosu 非常类似，Groovy 的语法和 Gosu 比非常难看
 Scala 是主打函数式编程的，但对入门者来说比 Kotlin 更难理解
 C# 和 Java 的语法糖程度都比较低">启发</abbr>
-      <br>Kotlin 支持可空类型系统、<abbr title="底类型；kotlin.Nothing::class, 类似 java.lang.Void 但是不为空">Bottom Type</abbr>、闭包、类型投影等 Java 严重缺失的概念，语言本身比 Java 更富语法糖化，同样的程序甚至完全相同的控制结构算法，用 Kotlin 表达会更简短好看；Kotlin 简洁、安全、完全支持与 Java API 互操作、对语言工具（比如 <abbr title="集成开发环境, Integrated development environment">IDE</abbr>）友好
+      <br><br>Kotlin 支持可空类型系统、<abbr title="底类型；kotlin.Nothing::class, 类似 java.lang.Void 但是不为空">Bottom Type</abbr>、闭包、类型投影等 Java 严重缺失的概念，语言本身比 Java 更富语法糖化，同样的程序甚至完全相同的控制结构算法，用 Kotlin 表达会更简短好看；Kotlin 简洁、安全、完全支持与 Java API 互操作、对语言工具（比如 <abbr title="集成开发环境, Integrated development environment">IDE</abbr>）友好
       <br>Kotlin 是一个从来不缺特性的语言 — <abbr title="kotlinx.coroutines">协程</abbr>、类型推导、<b>完全</b>面向对象（<code>class</code>, <code>object</code>, <code>companion object</code>）、扩展函数、<code>typealias</code>、面向对象 <abbr title="在没有继承关系的两个类之中混入相同的操作接口；Mixin 是提供了方法的实现的类。其他类可以访问 mixin 类的方法而不必成为其子类，它可以视作带实现的 interface、不应该直接被实例化；这种设计模式实现了依赖反转原则。"><ruby>mix-in<rt>混入</rt></ruby></abbr>、first-class 面向对象代理、属性（property）、密封类<sub>(<code>sealed class</code>)</sub>、数据类<sub>(<code>data class</code>)</sub>和数据类解构赋值、注解类<sub>(<code>annotation class</code>)</sub>、<code>internal</code> 访问限制、<code>lateinit var</code> 实例字段属性、闭包<sub>(lambda)</sub>、高阶函数、<ruby>尾递归<rt><code>tailrec</code></rt></ruby>、灵活控制流<sub>(labled chunk)</sub>、<code>if</code> 表达式、<code>when</code> 分支判断、内联（inline）方法和类、<code>vararg</code>、操作符重载、和 <code>Object#equals</code> 等价的 (<code>==</code>) 二元逻辑运算符、<code>infix</code> notation (e.g. <code>to</code>, <code>until</code>)、elvis (<code>?:</code>) 和 null 传导 (<code>?.</code>)、区间和 <code>Pair</code>、多行字符串、强制标识符合法化（<code>val `#_#` = 0x0_0</code>）、软化关键字（soft keywords）、<code>in out</code> 和声明处型变、<code>reified</code> 内联实现真泛型
-      <br>Kotlin 的编译器 <a href="https://github.com/JetBrains/kotlin/tree/master/compiler">kompiler</a> 是开放可嵌入的，Gradle、Maven、Ant 和众多 IDE 工具皆可集成 Kotlin Compiler 进行代码生成分析的工作，这使得为 Kotlin 开发语言工具、集成到已有工具平台更为简单
+      <br><br>Kotlin 的编译器 <a href="https://github.com/JetBrains/kotlin/tree/master/compiler">kompiler</a> 是开放可嵌入的，Gradle、Maven、Ant 和众多 IDE 工具皆可集成 Kotlin Compiler 进行代码生成分析的工作，这使得为 Kotlin 开发语言工具、集成到已有工具平台更为简单
       <br>2017 年，Kotlin 1.0 版本发布以后的第一年，Google I/O 大会上宣布 Kotlin 成为 Android 开发的『官方』语言
-      <br>和 Scala 相比，Kotlin 是为工程师设计，更符合实际工程实践需要，语法类似 Java 和 Scala
+      <br><br>和 Scala 相比，Kotlin 是为工程师设计，更符合实际工程实践需要，语法类似 Java 和 Scala
       <br>目前 Kotlin 已经成为 Android 开发的流行语言，被誉为 Android 平台的 <abbr title="Apple 开发的一门编程语言，可以类比 Mozilla Rust">Swift</abbr>
       <br>虽然是门『新语言』，Kotlin 的学习曲线极其平缓、学习量相当于学习一个新框架，只需要看几十行代码就可以扔掉 Java，开始学着使用 Kotlin 编程了<br>
       <li><a href="http://groovy-lang.org/">Groovy</a> (Apache)</li><p>
@@ -107,8 +123,9 @@ C# 和 Java 的语法糖程度都比较低">启发</abbr>
       <li><a href="https://github.com/beanshell/beanshell">BeanShell</a></li>
     </ul>
     </p><div id="intro-jvm-links">
-      <a href="https://github.com/imkiva/KiVM">KiVM Java VM (spec version 8 and only Java 8 is supported) implementation in C++</a>
-    </div></dd>
+      <a href="https://github.com/imkiva/KiVM">KiVM Java VM (spec version 8 and only Java 8 is supported) implementation in C++</a><br>
+      <a href="https://docs.oracle.com/javase/specs/jvms/se8/html/jvms-6.html#jvms-6.5">Java 8 JVM instruction set</a>
+    </div><br></dd>
   <dt>Java 语言 API <sub>（<code>java.*</code> 标准库）</sub></dt>
   <dt>Java 外部 API <sub>（来自商业机构和开源社区的第三方 Java <abbr title="Class library">类库</abbr>）</sub></dt>
 </dl>
@@ -149,9 +166,9 @@ JDK 1.0 时期的 Java 技术包括 JVM、Applet、AWT 等
 
 <b>同年 4 月</b>，10 个操作系统供应商声明将在其产品中嵌入 Java 技术
 
-<b>同年 9 月</b>，已经有 8.3 万网页使用了 Java 技术制作。
-
 <b>同年 5 月底</b>，Sun 公司于美国<abbr title="San Francisco">旧金山</abbr>举行了首届 JavaOne 大会，从此 JavaOne 大会成为世界 Java 开发者一年一度的技术盛会
+
+<b>同年 9 月</b>，已经有 8.3 万网页使用了 Java 技术制作。
 
 Java 1.1 发布和 <a href="https://www.haskell.org/definition/">Haskell</a> <abbr title="Haskell 1.4">97</abbr> 正好是同一年
 </div>
@@ -167,8 +184,9 @@ Java 1.1 发布和 <a href="https://www.haskell.org/definition/">Haskell</a> <ab
   <p id="notes-intro[0]"><sup>[0]</sup>详见 B 站<a href="https://www.bilibili.com/bangumi/media/md2580">《干物妹！小埋》</a><del>《干雾妹小霾》</del></p>
   <p id="notes-intro[1]"><sup>[1]</sup><abbr title="Enterprise resource planning">ERP</abbr>, 企业资源管理<br><abbr title="Customer relationship management">CRM</abbr>, 客户资源管理</p>
   <p id="notes-intro[2]"><sup>[2]</sup>信息来自 <a href="https://www.java.com/zh_CN/about/">java.com/zh_CN/about</a></p>
-  <p id="notes-intro[3]"><sup>[3]</sup>Oak 的 primitive number 包括 <code>unsigned</code> 无符号整数<small>（考虑一下它受到了 C++ 启发）</small>；Oak 不存在 <i>private</i> 访问（<code>private</code> 是 package-private）；Oak 早就有 <abbr title="Java 1.5 加入（JSR 201）"><code>enum</code></abbr> 和 <abbr title="Java 1.4 加入（JSR 41）"><code>assert</code></abbr> 了；Oak 的 <a href="https://en.wikipedia.org/wiki/Exception_handling#In_software">exceptions</a> 可以不检查(unchecked)；利用 <code>unprotect</code> 关键字异步异常（比如说系统的 SIGINT，<a href="https://docs.oracle.com/javase/8/docs/api/index.html?java/lang/ThreadDeath.html">ThreadDeath</a>）可以不处理、Oak 支持<a href="https://zh.wikipedia.org/wiki/%E5%A5%91%E7%BA%A6%E5%BC%8F%E8%AE%BE%E8%AE%A1">契约式编程</a>（比如，给子类继承的方法前置逻辑）</p>
+  <p id="notes-intro[3]"><sup>[3]</sup>Oak 的 primitive number 包括 <code>unsigned</code> 无符号整数<small>（考虑一下它受到了 C++ 启发）</small>；Oak 不存在 <i>private</i> 访问（<code>private</code> 是 package-private）；Oak 早就有 <abbr title="Java 1.5 加入（JSR 201）"><code>enum</code></abbr> 和 <abbr title="Java 1.4 加入（JSR 41）"><code>assert</code></abbr> 了；Oak 的 <a href="https://en.wikipedia.org/wiki/Exception_handling#In_software">exceptions</a> 可以不强制检查(unchecked)；利用 <code>unprotect</code> 关键字<abbr title="从线程时序外部引入的异常，可能随时发生（而不是只有在调用某一串方法时可能发生）、打断线程正常执行，类似现代微处理器的机器异常系统">异步异常</abbr>（比如说系统的 <a href="http://www.docjar.com/docs/api/sun/misc/Signal.html">SIGINT</a>，<a href="https://docs.oracle.com/javase/8/docs/api/index.html?java/lang/ThreadDeath.html">ThreadDeath</a>）可以不处理、Oak 支持<a href="https://zh.wikipedia.org/wiki/%E5%A5%91%E7%BA%A6%E5%BC%8F%E8%AE%BE%E8%AE%A1">契约式编程</a>（比如，给子类继承的方法前置逻辑）</p>
   <p id="notes-intro[4]"><sup>[4]</sup>排除增强类型系统安全检查强度和动态检查、运行时异常外；使用<ruby>中间码<rt><a href="https://en.wikipedia.org/wiki/Intermediate_representation">intermediate language</a></rt></ruby>，这也是属于见仁见智的问题，实际上，使用平台无关（全平台兼容）的中间代码作为最终的『二进制』形式而不是直接翻译到机器代码，最开始也给 Java 程序的执行带来了一些问题（虽然现在 Java 的选择也显得越来越符合“时代潮流”了），但是，语言<abbr title="『发布』代码的形式，有时被称为『二进制文件』，一般认为是会被持久化在非易失性 (non-volatile) 存储器 (memory) 上的代码形式">“最终”</abbr>的代码形式只是一个选择是否合适、是否符合定位的问题，不存在优劣之分。</p>
+  <p>一般都用 <code>[.]</code> 来引用论文、<code>^.</code> 做注释，不过这里不会引用任何论文，所以就拿它当 footnote 注释用了</p>
 </small></div>
 
 ## Contents 内容
@@ -189,6 +207,7 @@ Java 1.1 发布和 <a href="https://www.haskell.org/definition/">Haskell</a> <ab
   + Java 的泛型参数推导
 + `invokedynamic` 和 Lambda、Runtime Desugar 有啥关系 <sub>(Android)</sub>
   + Java 8 的 `->` lambda：<ruby>匿名<rt>anonymouse</rt>子类<rt>subclass</rt></ruby>的语法糖、Kotlin 的 <abbr title="Single Abstract Method">SAM</abbr> interface 自动实现
+  + 扩充：C++ 的 Lambda capture
   + Effective `final` 局部变量问题、Ruby、Python、C# 里的等价物
   + Java 是怎么实现 Lambda 的、为什么要这么做、为什么需要 `invokedynamic` 支持
 
@@ -196,17 +215,31 @@ Java 1.1 发布和 <a href="https://www.haskell.org/definition/">Haskell</a> <ab
 + 数组上声明的 `java.lang.Annotation`
 + 执行资源的抽象：Java 里的 `Thread`，Green threads、<abbr title="Light-weight process">LWP</abbr>s、Fibers，`volatile` 和 `synchronized` 同步
 + “不常见”语法
-  + `@interface`
-  + `assert`
-  + Generic Parameter 的 `&`
-  + `strictfp` 和 `transient`
-  + `package-info.java`
+  + `@interface` <ruby>声明<rt>Annotation</rt></ruby>类
+  + `assert` 断言语句
+  + Generic Parameter 的 `&` 多接口实现约束
+  + `strictfp` [IEEE 754] 兼容浮点数约束和 `transient` [无序列化]修饰
+  + `package-info.java` 给包加上 JavaDoc
   + <ruby>非<rt>non</rt></ruby> ASCII <ruby>标识符<rt>identifer</rt></ruby>
+  + constructor 里的 `this` 和 `super`
+  + 带构造器参数的匿名子类
+
+  ```java
+  new Ast.Leaf<Integer>(1) { @Override protected Integer eval() {return obj;} }
+  ```
+
+  + 带 label 的 `for`、`while`、`break` 和 `continue`
+  + 带赋值作为副作用表达式和 `final` 本地变量修饰符
+  + 要求 `Annotation` 实例作为参数的 `Annotation`
+  + `T Class<T>.cast(Object);` 静态方法
 + 和语言本身 / 工具集成的类
+
+[IEEE 754]: https://en.wikipedia.org/wiki/IEEE_754
+[无序列化]: https://en.wikibooks.org/wiki/Java_Programming/Keywords/transient
 
 ## Thanks 特别感谢
 
-> 排名不分先后；这是一个<ruby>集合<rt>set</rt></ruby>；而且当然是<abbr title="理论上的集合本身与线性表的主要区别在于集合不关心元素顺序，有序集（sorted set）只是说在『集合遍历』操作时输出对象存在顺序">无序</abbr>的
+> 排名不分先后。这是一个<ruby>集合<rt>set</rt></ruby>，而且当然是<abbr title="理论上的集合本身与线性表的主要区别在于集合不关心元素顺序，有序集（sorted set）只是说在『集合遍历』操作时输出对象存在顺序">无序</abbr>的
 
 + [《深入理解 Java 虚拟机（第二版）》](https://duckduckgo.com/?q=%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java%E8%99%9A%E6%8B%9F%E6%9C%BA%EF%BC%88%E7%AC%AC2%E7%89%88%EF%BC%89&t=ffab&atb=v163-1&ia=web) 从上面获取了一些 Java 历史相关的信息~
 + [《Kotlin 极简教程》](https://segmentfault.com/a/1190000010306636) 从上面了整理了关于泛型的性质描述~
@@ -462,6 +495,7 @@ Input !
   Query: <input type="text" name="q" value="Compiler"><br>
   Sorted By: <input type="text" name="s" value="stars"><br>
   Order: <select name="o">
+  <!-- 箭头从小值指向大值 -->
     <option value="asc">Ascending ↓</option>
     <option value="desc">Descending ↑</option>
   </select>
@@ -489,6 +523,26 @@ function sety(s) {document.getElementsByTagName('output')['y'].innerHTML=s;}
 ### MathJax 编写的 TeX 数学公式
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+
+$$Y = \lambda f. (\lambda c. f (c c))^2$$
+
+$$
+\begin{eqnarray}
+ f_p(x) & = & \sum_{j=0}^{n} c_j \phi(||x - x_j||)  \\
+& = & \sum_{j=0}^{n} c_j \phi_j(x) \\
+& = & c_0 \phi_0(x) + c_1 \phi_1(x) + \cdots + c_n \phi_n(x)
+\end{eqnarray}
+$$
+
+$$
+\begin{eqnarray}
+fib 1 & = & 1 \\
+fib 2 & = & 1 \\
+fib n \\
+  | n >0 & = & (fib n - 1) + (fib n - 2) \\
+  | otherwise & = & 0
+\end{eqnarray}
+$$
 
 $$\sum_{n=1}^\infty 1/n^2 = \frac{\pi^2}{6}$$
 
