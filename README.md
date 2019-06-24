@@ -257,6 +257,9 @@ Java 1.1 发布和 <a href="https://www.haskell.org/definition/">Haskell</a> <ab
 + [Hello, I am Conmajia.](https://www.cnblogs.com/conmajia/) `<ruby>` notation 的风格就是从这里来的~
 + [GitHub Pages](https://pages.github.com/) （当然也包括 [Jekyll] 项目啦）
 + [Markdown] Inline HTML 爽到（
++ [ECharts](https://echarts.apache.org/) 交互式可视化真香~
++ [MDUI](https://www.mdui.org/) 的 Marterial 媒体资源（小松鼠 :chipmunk: 🐿）
++ [MathJax](https://www.mathjax.org/) TeX 和 web 的完美结合
 
 [Jekyll]: https://jekyllrb.com/
 [Markdown]: https://commonmark.org
