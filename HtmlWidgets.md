@@ -302,6 +302,26 @@ onload(()=> {
   const loc = 'resources/audio/15e14b2ca405cc4a0419f4091f125b7235b8264d.mp3';
   const chilk = '🐣';
 
+  // if WebAudio is supported
+  try {
+    let audio = new Audio();
+    audio.src = loc;
+    audio.controls = true;
+    audio.autoplay = false;
+    audio.hidden = true;
+    document.body.appendChild(audio);
+  } catch (Error) {}
+
+  try {
+    let ctx = Howler.ctx;
+    let ana = ctx.createAnalyzer();
+    let src = ctx.createMediaElementSource(audio);
+
+    window.analyzer = ()=> ana;
+    src.connect(ana); ana.connect(ctx.destination);
+  } catch (Error) {}
+
+
   let
     rate_ctr = byId('rate-ctr'),
     skip_ctr = byId('skip-ctr')
