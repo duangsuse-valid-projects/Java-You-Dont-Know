@@ -285,27 +285,76 @@ onload(() => {
   <br><button class="chicken-anim" id="chkens7">🐔</button>
   <br><button class="chicken-anim" id="chkens8">🐔</button>
   <br><br>
-  <button id="cc"><text class="chicken-anim">🤔</text> 点击一下会发生什么呢？</button>
+  <button id="cc" class="neko-btn merge shadow neko-color-green"><text class="chicken-anim" style="display:inline-block">🤔</text> 点击一下会发生什么呢？</button>
+  <h6>sprite</h6>
+  <h6>???</h6>
+  <input id="sound-vol" type="range" min="0" max="100" />
+  <input id="rate-ctr" type="range" min="50" max="400" />
+  <input id="skip-ctr" type="range" min="-10" max="10" />
+  <button id="skip-do" class="neko-btn merge shadow neko-color-lime">→</button>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.2/howler.core.min.js" integrity="sha256-q2vnVvwrx3RbYXPyAwx7c2npmULQg2VdCXBoJ5+iigs=" crossorigin="anonymous"></script>
 <script>
+const byId = document.getElementById.bind(document);
+
 onload(()=> {
   const loc = 'resources/audio/15e14b2ca405cc4a0419f4091f125b7235b8264d.mp3';
   const chilk = '🐣';
 
+  let
+    rate_ctr = byId('rate-ctr'),
+    skip_ctr = byId('skip-ctr')
+    skip_btn = byId('skip-do');
+
+  let pos = 0,
+      skp = 0;
+
+  skip_ctr.oninput = (line) => {
+    skp = Number.parseInt(skip_ctr.value);
+    console.log("New skip offset ", skp);
+  };
+
+  skip_btn.onclick = () => {
+    console.log("Skipping, ", skp, pos);
+
+    if (Howler.usingWebAudio) {
+      pos=Howler.ctx.currentTime;
+      Howler.ctx.currentTime = pos + skp;
+    }
+    else {ud83dudc14.seek(skp);}
+  };
+
+  rate_ctr.oninput = (line) => {
+    let metr = Number.parseInt(rate_ctr.value) *0.01;
+    ud83dudc14.rate(metr);
+    console.log("New playback rate ", metr);
+  };
+
+  let lyric_points = range(1,8+1).map(i => byId(`chkens${i}`));
+  for (let elem of lyric_points) {
+    elem.onclick = () => {elem.innerText='🐣';elem.classList.add(chicken_anim)};
+  }
+
+  let volumer = byId('sound-vol');
+  volumer.oninput = (line) => {
+    let metr = Number.parseInt(volumer.value) *0.01;
+    ud83dudc14.volume(metr)
+    console.log("New volume ", metr);
+  };
+
   let tried = 0; // 要按 N 次才有效果...
   let lyrics = false;
 
-  const byId = document.getElementById.bind(document);
-  let ud83dudc14 = new Howl({src:[loc],autoplay:false});
+  function 壮士() {alert("🐔 LOVE YOU！");}
+
+  let ud83dudc14 = new Howl({src:[loc],autoplay:false,onend:壮士});
   let chi = byId(chilk);
   let cc = byId('cc');
 
   function truncMovePoint(dx) { while (Math.trunc(dx) !==dx) {dx = dx*10;} return dx; }
   function accMovePoint(dx, greater=1) { while (dx <greater) {dx = dx*10;} return dx; }
 
-  let lyric_points = range(1,8+1).map(i => byId(`chkens${i}`));
   function pick(xs) {
     let i = truncMovePoint(Math.random());
     return xs[i %xs.length];
@@ -340,15 +389,11 @@ onload(()=> {
     if ($delay_max <500) $delay_max=500;
   }, selectJTime());
 
-  for (let elem of lyric_points) {
-    elem.onclick = () => {elem.innerText='🐣';elem.classList.add(chicken_anim)};
-  }
-
   cc.onclick = ()=> {
     switch (tried) {
     case 0:
       byId('cysp').innerText = 'Chicken! You are SO PREETY!';
-      ud83dudc14.play();
+      ud83dudc14.once('load', ()=>ud83dudc14.play());
       cc.innerText = '好奇心害死猫！🐔';
       break;
     case 1:
@@ -358,6 +403,11 @@ onload(()=> {
     case 2:
       lyrics = true;
       鸡你太美();
+      break;
+    case 3:
+      break;
+    case 4:
+      ud83dudc14.fade(1.0, 0.0, 5000);
       break;
     default:
       alert("WARNING: κȜùηȇΓ%ƀő̌	ʦʚưɛÊȗɯȬĝŏ3ǡ˸Ŏʻ˄ČΏğķƊʣ¶ ɮ!η\"À#Γ$ɑ%ū&Į'ȥ(ȕ)α*̽+Φ,ƀ-ƿ.ʝ/Ȕ0ͫ1͖2ˍ3ȫ4ļ5ť6ƨ7$8½9Ͱ:;Ȣ<5=ˏ>Ə?̀@ͩA̧BʹCĂDʯEwF GȡHI;J KLÃMNɞOɡPđQ˩R5SɸTɕUϡVʪWΆẌYƫZ˭[Ĵ\ƚ]ˍ^ƫ_Ǒ`DaăbϑcŻdÇeĺfΉgγhĲişjBkʩlξmˢnÔoǃpɝqŸrƁsÃtǒuʮvşwƄx¬yƍzĖ{ȧ|Ŀ}ϖ~ǣ΢ΰȹŇΉ͆śŗΎ¨ş£ŅΏ½Ō˶͖͞ΆƞÙ̆ιɉ΍ɯɾşĻ@Ȇ˶ Ʈ¡¢ŷ£Ω¤Ȅ¥̏¦ĳ§Ē¨A©³ª«K¬·­ǁ®Ɔ¯´°ͅ±6²¤³ˮ´kµ͚¶·˭¸̎¹ōº¸»΋¼T½ĺ¾΃¿̄À̷ÁųÂǆÃÄ,Å˂ÆȺÇ˱ÈÉξÊËŬÌġÍɶÎǣÏ͸ÐΛÑΣÒτÓǽÔɃÕǵÖā×̇ØáÙʭÚɊÛČÜÝɋÞ˷ß˒àOá͹âɚãθäæåȕæɬçlè¢éɀêɡëȮìĭíǊî̿ïɁðàñˊò΄ó^ôͮõǫö¶÷ȂøǐùȕúόûƊüǖýîþȓÿĤĀƨāĖĂ©ăĐĄązĆćƄĈƢĉȗĊ̭ċ̼ČϓčȢĎͺďƥĐ˙đuĒēĔóĕͲĖðėϟĘðęǻĚĞěɷĜǊĝǡĞŦğɗĠ¤ġÌĢʹģOĤȻĥĦɛħ®Ĩƶĩ¡Īʟī");
