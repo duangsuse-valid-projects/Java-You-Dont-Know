@@ -575,8 +575,10 @@ function sety(s) {document.getElementsByTagName('output')['y'].innerHTML=s;}
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
 
+Y Combinator
 $$Y = \lambda f. (\lambda c. f (c c))^2$$
 
+Equation array
 $$
 \begin{eqnarray}
  f_p(x) & = & \sum_{j=0}^{n} c_j \phi(||x - x_j||)  \\
@@ -585,13 +587,14 @@ $$
 \end{eqnarray}
 $$
 
+Fibonacci program in Haskell
 $$
 \begin{eqnarray}
-fib 1 & = & 1 \\
-fib 2 & = & 1 \\
-fib n \\
-  | n >0 & = & (fib n - 1) + (fib n - 2) \\
-  | otherwise & = & 0
+fib & 1 = 1 \\
+fib & 2 = 1 \\
+fib & n & \\
+&|& n >0 & = & (fib n - 1) + (fib n - 2) \\
+&|& otherwise & = & 0
 \end{eqnarray}
 $$
 
@@ -599,11 +602,26 @@ $$\sum_{n=1}^\infty 1/n^2 = \frac{\pi^2}{6}$$
 
 $$(varsupsetneq)\varsupsetneq (supset)\supset (sqsupseteq)\sqsupseteq (star)\star (ast)\ast$$
 
-$$f(a) = \frac{1}{2(pi)\pi i} (oint)\oint\frac{f(z)}{z-a}dz$$
+$$f(a) = \frac{1}{2\pi i} \oint\frac{f(z)}{z-a}dz$$
 
 $$
-(label origh) (hat)\hat{h}(t) = \sum_{k = 1}^{L} a_k(t^i_a)(cos)\cos(2\pi k f_0(t^i_a)(t - t^i_a) + (phi)\phi_k(t^i_a))
+\hat{h}(t) = \sum_{k = 1}^{L} a_k(t^i_a)\cos(2\pi k f_0(t^i_a)(t - t^i_a) + \phi_k(t^i_a))
 $$
+
+$$\forall{a\in{\mathbb{Q}}}. a+n=n+a$$
+$$\exists{n}. n-1=0$$
+$$p \Rightarrow q \Rightarrow (p\land q)$$
+$$p \Leftrightarrow q = (p \rightarrow q) \land (q \rightarrow p)$$
+$$((p \lor q) \Rightarrow r) \Leftrightarrow (p \Rightarrow r) \land (q \Rightarrow r)$$
+$$\mathit{R} \text{ is reflexive } \Leftrightarrow \forall{x}. (x \mathit{R} x)$$
+$$\mathit{R} \text{ is symmetry } \Leftrightarrow (a \mathit{R} b) \Rightarrow (b \mathit{R} a)$$
+$$\mathit{R} \text{ is transitive } \Leftrightarrow (a \mathit{R} b) \Rightarrow (b \mathit{R} c) \Rightarrow (a \mathit{R} c)$$
+$$\mathit{R} \text{ is commutative } \Leftrightarrow (a \mathit{R} b) \Leftrightarrow (b \mathit{R} a)$$
+$$\mathit{R} \text{ is associative } \Leftrightarrow (a \mathit{R} b) \mathit{R} c \Leftrightarrow a \mathit{R} (b \mathit{R} c)$$
+$$Algorithms + Data Structures = Programs$$
+$$Fix(f)=Asc(f)\cap Desc(f)$$
+$$\forall x’ \in \mathit{Asc}(f) \ . \ f^i(x’) \sqsubseteq f^{i+1}$$
+
 
 ### echarts 数据图表
 
